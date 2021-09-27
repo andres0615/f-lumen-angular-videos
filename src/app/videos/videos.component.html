@@ -1,5 +1,11 @@
 <div *ngFor="let row of rowsVideos" class="flex-container" fxLayout="row">
-	<div *ngFor="let video of row" fxFlex>
-		<h2>{{ video.title }}</h2>
-	</div>
+  <div *ngFor="let video of row" fxFlex>
+    <div fxLayout="row">
+      <a [routerLink]="['/']"><img src="{{ video.thumbnail }}" /></a>
+    </div>
+    <div fxLayout="row">
+      <a [routerLink]="['/']">{{ video.title }}</a>
+    </div>
+    <br />
+  </div>
 </div>

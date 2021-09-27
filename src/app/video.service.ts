@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VideoService {
   private videosUrl = 'http://localhost:8000/video'; // URL to web api
@@ -13,15 +13,9 @@ export class VideoService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getVideos(): Observable<Video[]> {
-    //this.messageService.add('HeroService: fetched heroes');
-    //const heroes = of(HEROES);
-    //return heroes;
     return this.http.get<Video[]>(this.videosUrl);
   }
-
 }

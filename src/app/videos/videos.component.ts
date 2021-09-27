@@ -8,12 +8,9 @@ import { VideoService } from '../video.service';
   styleUrls: ['./videos.component.css'],
 })
 export class VideosComponent implements OnInit {
-
   rowsVideos: Video[][] = [];
 
-  constructor(
-    private videoService: VideoService,
-  ) {}
+  constructor(private videoService: VideoService) {}
 
   ngOnInit(): void {
     this.getVideos();
@@ -25,13 +22,12 @@ export class VideosComponent implements OnInit {
     });
   }
 
-  chunk(videos:Video[]) {
-
-    let chunkedVideos = []
+  chunk(videos: Video[]) {
+    let chunkedVideos = [];
     let size = 4;
 
-    for (let i = 0;  i < videos.length; i += size) {
-      chunkedVideos.push(videos.slice(i, i + size))
+    for (let i = 0; i < videos.length; i += size) {
+      chunkedVideos.push(videos.slice(i, i + size));
     }
 
     return chunkedVideos;
