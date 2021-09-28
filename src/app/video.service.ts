@@ -3,12 +3,13 @@ import { Video } from './video';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VideoService {
-  private videosUrl = 'http://localhost:8000/video'; // URL to web api
+  private videosUrl = environment.apiUrl + '/video'; // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
