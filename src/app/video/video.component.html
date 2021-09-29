@@ -1,0 +1,31 @@
+<div id="video-component" class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" >
+  <div class="child-1" fxFlex="1 1 70">
+
+    <div class="flex-container" fxLayout="column">
+
+      <div class="child-1" fxFlex>
+        <video id="video-component-video" src="{{ video.video }}" controls=""></video>
+      </div>
+
+      <div class="title-div" fxFlex>
+        <h1>{{ video.title }}</h1>
+      </div>
+
+      <div class="meta-data-div" fxFlex>
+        <div class="flex-container" fxLayout="row">
+          <div class="child-1" fxFlex>
+            {{ video.created_at | date }}
+          </div>
+          <div class="child-2" fxFlex></div>
+        </div>
+      </div>
+
+      <div class="description-div" fxFlex>
+        <p>{{ video.description }}</p>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="child-2" fxFlex="1 1 30">test</div>
+</div>

@@ -19,4 +19,10 @@ export class VideoService {
   getVideos(): Observable<Video[]> {
     return this.http.get<Video[]>(this.videosUrl);
   }
+
+  getVideo(id: number): Observable<Video> {
+    const url = `${this.videosUrl}/${id}`;
+
+    return this.http.get<Video>(url);
+  }
 }

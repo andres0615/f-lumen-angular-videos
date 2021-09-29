@@ -13,9 +13,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent, VideosComponent],
+  declarations: [AppComponent, TopBarComponent, VideosComponent, VideoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

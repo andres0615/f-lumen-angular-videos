@@ -1,0 +1,19 @@
+#video-component-video {
+	width: 100%;
+}
+
+#video-component > .child-1 {
+	padding: 0 .7em;
+}
+
+#video-component > .child-2 {
+	padding: 0 .7em;
+}
+
+.title-div {	
+	margin-top: .8em;
+}
+
+.meta-data-div {
+	margin-bottom: 1em;
+}

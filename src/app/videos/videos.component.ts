@@ -33,4 +33,5 @@ export class VideosComponent implements OnInit {
 
     return chunkedVideos;
   }
+
 }
