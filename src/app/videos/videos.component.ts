@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
 import { environment } from '../../environments/environment';
+import { LoadingPageService } from '../loading-page.service';
 
 @Component({
   selector: 'app-videos',
@@ -11,15 +12,20 @@ import { environment } from '../../environments/environment';
 export class VideosComponent implements OnInit {
   rowsVideos: Video[][] = [];
 
-  constructor(private videoService: VideoService) {}
+  constructor(
+    private videoService: VideoService,
+    public loadingPageService: LoadingPageService
+    ) {}
 
   ngOnInit(): void {
+    this.loadingPageService.setLoading(true);
     this.getVideos();
   }
 
   getVideos(): void {
     this.videoService.getVideos().subscribe((videos) => {
       this.rowsVideos = this.chunk(videos);
+      this.loadingPageService.setLoading(false);
     });
   }
 
