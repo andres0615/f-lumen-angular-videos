@@ -18,7 +18,8 @@ export class VideoComponent implements OnInit {
     'thumbnail': '',
     'user_id': 0,
     'created_at': '',
-    'updated_at': ''
+    'updated_at': '',
+    'username': ''
   };
 
   constructor(

@@ -1,0 +1,26 @@
+.related-videos-video img {
+	width: 100%;
+}
+
+.related-videos-video {
+	padding-bottom: .6em;
+}
+
+.related-videos-video .meta-data {
+	padding: 0.3em .5em;
+}
+
+.title {
+	margin-bottom: .2em;
+}
+
+.title a {
+	text-decoration: none;
+	color: black;
+	font-weight: 450;
+}
+
+a.username {
+	text-decoration: none;
+	color: gray;
+}

@@ -15,9 +15,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
+import { RelatedVideosComponent } from './related-videos/related-videos.component';
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent, VideosComponent, VideoComponent],
+  declarations: [AppComponent, TopBarComponent, VideosComponent, VideoComponent, RelatedVideosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
