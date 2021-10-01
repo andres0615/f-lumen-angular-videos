@@ -17,12 +17,14 @@ export class RelatedVideosComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loadingPageService.setLoading(true);
     this.getVideos();
   }
 
   getVideos(): void {
     this.videoService.getVideos().subscribe((videos: Video[]) => {
       this.videos = videos;
+      this.loadingPageService.setLoading(false);
     });
   }
 
