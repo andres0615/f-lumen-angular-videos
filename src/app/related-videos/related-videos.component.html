@@ -1,19 +1,19 @@
 <div>
-	<div class="related-videos-video" *ngFor="let video of videos" fxLayout="row" >
-		<div fxFlex="1 1 40%" >
-			<a href="">
-				<img src="{{ video.thumbnail }}">
-			</a>
-		</div>
-		<div class="meta-data" fxFlex="1 1 60%" >
-			<div fxLayout="column" >
-				<div class="title" fxFlex >
-					<a href="">{{ video.title }}</a>
-				</div>
-				<div fxFlex >
-					<a class="username" href="">{{ video.username }}</a>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="related-videos-video" *ngFor="let video of videos" fxLayout="row">
+    <div fxFlex="1 1 40%">
+      <a href="">
+        <img src="{{ video.thumbnail }}" />
+      </a>
+    </div>
+    <div class="meta-data" fxFlex="1 1 60%">
+      <div fxLayout="column">
+        <div class="title" fxFlex>
+          <a href="">{{ video.title }}</a>
+        </div>
+        <div fxFlex>
+          <a class="username" href="">{{ video.username }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

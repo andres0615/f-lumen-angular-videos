@@ -1,17 +1,17 @@
-.videos-component-video  a {
-	text-decoration: none;
-	color: black;
-	font-weight: 450;
+.videos-component-video a {
+  text-decoration: none;
+  color: black;
+  font-weight: 450;
 }
 
 .thumbnail {
-	width: 100%;
+  width: 100%;
 }
 
 .thumbnail img {
-	width: 100%;
+  width: 100%;
 }
 
 .videos-component-video {
-	padding: 0 .5em;
+  padding: 0 0.5em;
 }

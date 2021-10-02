@@ -1,10 +1,8 @@
-export interface Video {
+export interface Comment {
   id: number;
-  title: string;
-  description: string;
-  video: string;
-  thumbnail: string;
+  comment: string;
   user_id: number;
+  video_id: number;
   username: string;
   user_photo: string;
   created_at: string;

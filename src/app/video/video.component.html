@@ -1,10 +1,17 @@
-<div id="video-component" class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" >
+<div
+  id="video-component"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayout.sm="column"
+>
   <div class="child-1" fxFlex="1 1 65">
-
-    <div class="flex-container" fxLayout="column">
-
-      <div class="child-1" fxFlex>
-        <video id="video-component-video" src="{{ video.video }}" controls=""></video>
+    <div fxLayout="column">
+      <div fxFlex>
+        <video
+          id="video-component-video"
+          src="{{ video.video }}"
+          controls=""
+        ></video>
       </div>
 
       <div class="title-div" fxFlex>
@@ -12,20 +19,41 @@
       </div>
 
       <div class="meta-data-div" fxFlex>
-        <div class="flex-container" fxLayout="row">
-          <div class="child-1" fxFlex>
+        <div fxLayout="row">
+          <div fxFlex>
             {{ video.created_at | date }}
           </div>
           <div class="child-2" fxFlex></div>
         </div>
       </div>
 
-      <div class="description-div" fxFlex>
-        <p>{{ video.description }}</p>
+      <div class="user-div" fxFlex>
+        <div fxLayout="row">
+          <div class="user-photo-div" fxFlex="1 1 8%">
+            <a href="">
+              <img src="{{ video.user_photo }}" />
+            </a>
+          </div>
+          <div fxFlex>
+            <a href="">{{ video.username }}</a>
+          </div>
+          <div fxFlex></div>
+        </div>
       </div>
 
-    </div>
+      <div class="description-div" fxFlex>
+        <div fxLayout="row">
+          <div fxFlex="1 1 8%"></div>
+          <div fxFlex>
+            <p>{{ video.description }}</p>
+          </div>
+        </div>
+      </div>
 
+      <div class="comments-div" fxFlex>
+        <app-comments></app-comments>
+      </div>
+    </div>
   </div>
   <div class="child-2" fxFlex="1 1 35">
     <app-related-videos></app-related-videos>

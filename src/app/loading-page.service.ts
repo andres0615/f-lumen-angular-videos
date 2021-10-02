@@ -1,27 +1,25 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoadingPageService {
   loading: boolean = false;
   loadingComponents: Array<number> = [];
 
-  constructor() { }
+  constructor() {}
 
   getLoading() {
     return this.loading;
   }
 
   /**
-  * Actualizar el estado de la carga.
-  * @param    {boolean} loading    Name of the user
-  */
+   * Actualizar el estado de la carga.
+   * @param    {boolean} loading    Name of the user
+   */
 
   setLoading(loading: boolean) {
-
     if (loading === true) {
-
       // Cuando algun componente indica que empezo a cargarse.
 
       /* Se agrega un item a loadingComponents para indicar 
@@ -30,11 +28,9 @@ export class LoadingPageService {
       this.loadingComponents.push(this.loadingComponents.length + 1);
 
       setTimeout(() => {
-          this.loading = true;
+        this.loading = true;
       });
-
-    } else if(loading === false) {
-
+    } else if (loading === false) {
       // Cuando algun componente indica que termino de cargarse.
 
       /* Se elimina un item de loadingComponents para indicar que uno de 
@@ -50,7 +46,6 @@ export class LoadingPageService {
           this.loading = false;
         });
       }
-
     }
   }
 }

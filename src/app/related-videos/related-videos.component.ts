@@ -6,7 +6,7 @@ import { LoadingPageService } from '../loading-page.service';
 @Component({
   selector: 'app-related-videos',
   templateUrl: './related-videos.component.html',
-  styleUrls: ['./related-videos.component.css']
+  styleUrls: ['./related-videos.component.css'],
 })
 export class RelatedVideosComponent implements OnInit {
   videos: Video[] = [];
@@ -14,7 +14,7 @@ export class RelatedVideosComponent implements OnInit {
   constructor(
     private videoService: VideoService,
     public loadingPageService: LoadingPageService
-    ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadingPageService.setLoading(true);
@@ -27,5 +27,4 @@ export class RelatedVideosComponent implements OnInit {
       this.loadingPageService.setLoading(false);
     });
   }
-
 }

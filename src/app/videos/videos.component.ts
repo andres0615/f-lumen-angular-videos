@@ -15,7 +15,7 @@ export class VideosComponent implements OnInit {
   constructor(
     private videoService: VideoService,
     public loadingPageService: LoadingPageService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.loadingPageService.setLoading(true);
@@ -39,5 +39,4 @@ export class VideosComponent implements OnInit {
 
     return chunkedVideos;
   }
-
 }

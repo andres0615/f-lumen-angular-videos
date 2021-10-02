@@ -1,19 +1,34 @@
 #video-component-video {
-	width: 100%;
+  width: 100%;
 }
 
 #video-component > .child-1 {
-	padding: 0 .7em;
+  padding: 0 0.7em;
 }
 
 #video-component > .child-2 {
-	padding: 0 .7em;
+  padding: 0 0.7em;
 }
 
-.title-div {	
-	margin-top: .8em;
+.title-div {
+  margin-top: 0.8em;
 }
 
-.meta-data-div {
-	margin-bottom: 1em;
+.meta-data-div,
+.comments-div {
+  margin-bottom: 1em;
+}
+
+.user-div a {
+  text-decoration: none;
+  color: black;
+  font-weight: 450;
+}
+
+.user-photo-div {
+  margin-right: 0.3em;
+}
+
+.user-photo-div img {
+  width: 100%;
 }

@@ -16,9 +16,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
 import { RelatedVideosComponent } from './related-videos/related-videos.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent, VideosComponent, VideoComponent, RelatedVideosComponent],
+  declarations: [
+    AppComponent,
+    TopBarComponent,
+    VideosComponent,
+    VideoComponent,
+    RelatedVideosComponent,
+    CommentsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
