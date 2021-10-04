@@ -10,6 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +20,7 @@ import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
 import { RelatedVideosComponent } from './related-videos/related-videos.component';
 import { CommentsComponent } from './comments/comments.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { CommentsComponent } from './comments/comments.component';
     VideoComponent,
     RelatedVideosComponent,
     CommentsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,9 @@ import { CommentsComponent } from './comments/comments.component';
     MatIconModule,
     MatGridListModule,
     MatProgressBarModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
     FlexLayoutModule,
     MatMenuModule,
     HttpClientModule,

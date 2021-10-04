@@ -1,0 +1,17 @@
+#h1-div	{
+	text-align: center;
+}
+
+#login-div {
+	padding: 2em 3em;
+	text-align: center;
+	border-radius: 3%;
+}
+
+#login-div mat-form-field {
+	width: 100%;
+}
+
+#login-button {
+	margin-top: 1em;
+}
