@@ -19,6 +19,12 @@ export class AuthService {
     return localStorage.getItem("access_token");
   }
 
+  setSession(token: any) {
+    localStorage.setItem('access_token', token.access_token);
+    localStorage.setItem('token_type', token.token_type);
+    localStorage.setItem('expires_in', token.expires_in);
+  }
+
   /*getUser(): any {
     const user = window.sessionStorage.getItem(USER_KEY);
     if (user) {
@@ -44,5 +50,7 @@ export class AuthService {
 
   logout() {
       localStorage.removeItem("access_token");
+      localStorage.removeItem('token_type');
+      localStorage.removeItem('expires_in');
   }
 }
