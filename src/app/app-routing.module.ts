@@ -5,6 +5,7 @@ import { VideoComponent } from './video/video.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AccountComponent } from './account/account.component';
+import { OnlyLoggedUsersGuard } from './only-logged-users.guard';
 
 const routes: Routes = [
   { path: '', component: VideosComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { 
     path: 'settings', 
+    canActivate: [OnlyLoggedUsersGuard],
     children: [
       {
         path: '',
