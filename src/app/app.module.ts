@@ -13,7 +13,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
@@ -22,6 +24,8 @@ import { RelatedVideosComponent } from './related-videos/related-videos.componen
 import { CommentsComponent } from './comments/comments.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { SettingsComponent } from './settings/settings.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { AuthInterceptor } from './auth.interceptor';
     RelatedVideosComponent,
     CommentsComponent,
     LoginComponent,
+    SettingsComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +54,8 @@ import { AuthInterceptor } from './auth.interceptor';
     FlexLayoutModule,
     MatMenuModule,
     HttpClientModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {
