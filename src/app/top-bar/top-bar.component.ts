@@ -8,15 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-bar.component.css'],
 })
 export class TopBarComponent implements OnInit {
+  constructor(public authService: AuthService, private router: Router) {}
 
-  constructor(
-    public authService: AuthService,
-    private router: Router
-    ) {}
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   logout(): void {
     this.authService.logout();

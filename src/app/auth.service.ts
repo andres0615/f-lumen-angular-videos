@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private authUrl = environment.apiUrl + '/auth'; // URL to web api
@@ -11,12 +11,10 @@ export class AuthService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   getToken() {
-    return localStorage.getItem("access_token");
+    return localStorage.getItem('access_token');
   }
 
   setSession(token: any) {
@@ -37,20 +35,23 @@ export class AuthService {
   isLoggedIn(): boolean {
     const token = this.getToken();
 
-    if(token){
+    if (token) {
       return true;
     }
 
     return false;
   }
 
-  login(username:string, password:string ) {
-        return this.http.post<any>(this.authUrl + '/login', {'username': username, 'password': password});
+  login(username: string, password: string) {
+    return this.http.post<any>(this.authUrl + '/login', {
+      username: username,
+      password: password,
+    });
   }
 
   logout() {
-      localStorage.removeItem("access_token");
-      localStorage.removeItem('token_type');
-      localStorage.removeItem('expires_in');
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('token_type');
+    localStorage.removeItem('expires_in');
   }
 }

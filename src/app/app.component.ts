@@ -14,26 +14,21 @@ export class AppComponent {
   constructor(
     public loadingPageService: LoadingPageService,
     private router: Router
-    ) {}
+  ) {}
 
   ngOnInit() {
-    
     this.router.events.subscribe((val) => {
-
-      if(val instanceof NavigationEnd) {
-
+      if (val instanceof NavigationEnd) {
         let fullWidth: boolean = false;
 
         fullWidth = this.router.url.includes('/settings');
 
         if (fullWidth === true) {
-            this.layoutAlign = 'column';
+          this.layoutAlign = 'column';
         } else {
-            this.layoutAlign = 'row';
+          this.layoutAlign = 'row';
         }
       }
-
     });
-
   }
 }

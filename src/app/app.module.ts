@@ -55,14 +55,14 @@ import { AccountComponent } from './account/account.component';
     MatMenuModule,
     HttpClientModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
