@@ -7,6 +7,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { AccountComponent } from './account/account.component';
 import { OnlyLoggedUsersGuard } from './only-logged-users.guard';
 import { OnlyNoLoggedUsersGuard } from './only-no-logged-users.guard';
+import { ChannelComponent } from './channel/channel.component';
+import { ChannelVideosComponent } from './channel-videos/channel-videos.component';
 
 const routes: Routes = [
   { path: '', component: VideosComponent },
@@ -27,6 +29,21 @@ const routes: Routes = [
           {
             path: 'account',
             component: AccountComponent,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: 'channel',
+    children: [
+      {
+        path: '',
+        component: ChannelComponent,
+        children: [
+          {
+            path: ':user_id/videos',
+            component: ChannelVideosComponent,
           },
         ],
       },

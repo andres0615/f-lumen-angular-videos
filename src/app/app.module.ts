@@ -26,6 +26,9 @@ import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { SettingsComponent } from './settings/settings.component';
 import { AccountComponent } from './account/account.component';
+import { ChannelComponent } from './channel/channel.component';
+import { ChannelVideosComponent } from './channel-videos/channel-videos.component';
+import { ThumbnailVideoThemeOneComponent } from './thumbnail-video-theme-one/thumbnail-video-theme-one.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { AccountComponent } from './account/account.component';
     LoginComponent,
     SettingsComponent,
     AccountComponent,
+    ChannelComponent,
+    ChannelVideosComponent,
+    ThumbnailVideoThemeOneComponent,
   ],
   imports: [
     BrowserModule,

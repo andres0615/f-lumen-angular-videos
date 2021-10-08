@@ -21,9 +21,10 @@ export class AppComponent {
       if (val instanceof NavigationEnd) {
         let fullWidth: boolean = false;
 
-        fullWidth = this.router.url.includes('/settings');
-
-        if (fullWidth === true) {
+        if (
+          this.router.url.includes('/settings') ||
+          this.router.url.includes('/channel')
+        ) {
           this.layoutAlign = 'column';
         } else {
           this.layoutAlign = 'row';

@@ -11,7 +11,12 @@
           <a href="">{{ video.title }}</a>
         </div>
         <div fxFlex>
-          <a class="username" href="">{{ video.username }}</a>
+          <a
+            class="username"
+            [routerLink]="['/channel/' + video.user_id + '/videos']"
+            href=""
+            >{{ video.username }}</a
+          >
         </div>
       </div>
     </div>
