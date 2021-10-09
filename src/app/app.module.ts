@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
@@ -62,6 +63,7 @@ import { ThumbnailVideoThemeOneComponent } from './thumbnail-video-theme-one/thu
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
+    MatTabsModule,
   ],
   providers: [
     {

@@ -9,14 +9,14 @@ import { User } from '../user';
   styleUrls: ['./top-bar.component.css'],
 })
 export class TopBarComponent implements OnInit {
-  user = {} as User;
+  //user = {} as User;
 
   constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
       this.authService.getUser().subscribe((user) => {
-        this.user = user;
+        this.authService.setUser(user);
       });
     }
   }

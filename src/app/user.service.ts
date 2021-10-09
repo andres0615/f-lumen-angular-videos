@@ -9,6 +9,7 @@ import { Observable, of } from 'rxjs';
 })
 export class UserService {
   private usersUrl = environment.apiUrl + '/user'; // URL to web api
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };

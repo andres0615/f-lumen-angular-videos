@@ -9,6 +9,8 @@ import { Observable, of } from 'rxjs';
 })
 export class AuthService {
   private authUrl = environment.apiUrl + '/auth'; // URL to web api
+  public user = {} as User;
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
@@ -23,13 +25,14 @@ export class AuthService {
   }
 
   setSession(token: any) {
-    let ttl = this.getTokenExpiresIn() * 1000;
+    localStorage.setItem('expires_in', token.expires_in);
+
+    let ttl = ((this.getTokenExpiresIn() * 1000) / 4) * 3;
 
     this.setWithExpiry('access_token', token.access_token, ttl);
     this.setWithExpiry('token_type', token.token_type, ttl);
-    this.setWithExpiry('expires_in', token.expires_in, ttl);
 
-    this.refreshToken();
+    //this.refreshToken();
   }
 
   getUser(): Observable<User> {
@@ -40,6 +43,10 @@ export class AuthService {
     const token = this.getToken();
 
     if (token) {
+      if (this.isTokenExpired() == true) {
+        return false;
+      }
+
       return true;
     }
 
@@ -76,10 +83,10 @@ export class AuthService {
   }
 
   getTokenExpiresIn(): number {
-    let expires_in = localStorage.getItem('expires_in');
+    let expiresIn = localStorage.getItem('expires_in');
 
-    if (expires_in) {
-      return +expires_in;
+    if (expiresIn) {
+      return +expiresIn;
     }
 
     return 0;
@@ -88,12 +95,30 @@ export class AuthService {
   setWithExpiry(key: any, value: any, ttl: number) {
     const now = new Date();
 
-    // `item` is an object which contains the original value
-    // as well as the time when it's supposed to expire
     const item = {
       value: value,
       expiry: now.getTime() + ttl,
     };
     localStorage.setItem(key, JSON.stringify(item));
+  }
+
+  isTokenExpired() {
+    if (localStorage.getItem('access_token')) {
+      let access_token = JSON.parse(localStorage.getItem('access_token')!);
+
+      const now = new Date();
+
+      if (now.getTime() > access_token.expiry) {
+        return true;
+      }
+
+      return false;
+    }
+
+    return true;
+  }
+
+  setUser(user: User) {
+    this.user = user;
   }
 }
