@@ -108,7 +108,8 @@ export class AuthService {
 
       const now = new Date();
 
-      if (now.getTime() > access_token.expiry) {
+      if (now.getTime() >= access_token.expiry) {
+        this.deleteSession();
         return true;
       }
 

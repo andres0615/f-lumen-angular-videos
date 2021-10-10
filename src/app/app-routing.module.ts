@@ -38,11 +38,11 @@ const routes: Routes = [
     path: 'channel',
     children: [
       {
-        path: '',
+        path: ':user_id',
         component: ChannelComponent,
         children: [
           {
-            path: ':user_id/videos',
+            path: 'videos',
             component: ChannelVideosComponent,
           },
         ],

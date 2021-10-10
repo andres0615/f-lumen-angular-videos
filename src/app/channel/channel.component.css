@@ -4,4 +4,17 @@
 
 .channel-username-div {
   padding: 1em;
+  padding-left: 3em;
+}
+
+#channel-header {
+  padding-top: 2em;
+}
+
+#channel-header h1 {
+  color: #fff;
+}
+
+#channel-user-data {
+  margin-bottom: 2em;
 }
