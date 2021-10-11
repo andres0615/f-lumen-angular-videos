@@ -1,53 +1,51 @@
-<p>
-  <mat-toolbar>
-    <!-- <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>menu</mat-icon>
-    </button> -->
+<mat-toolbar>
+  <!-- <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button> -->
 
-    <a mat-button [routerLink]="['/']"> Inicio </a>
+  <a mat-button [routerLink]="['/']"> Inicio </a>
 
-    <span class="example-spacer"></span>
+  <span class="example-spacer"></span>
 
-    <div *ngIf="authService.isLoggedIn()">
-      <button
-        mat-button
-        [matMenuTriggerFor]="menu"
-        aria-label="Example icon-button with a menu"
-      >
-        <span id="username-span">{{ authService.user.username }}</span>
-        <mat-icon>account_circle</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button
-          [routerLink]="['channel/' + authService.user.id + '/videos']"
-          mat-menu-item
-        >
-          <mat-icon>account_circle</mat-icon>
-          <span>Tu canal</span>
-        </button>
-        <button [routerLink]="['settings/account']" mat-menu-item>
-          <mat-icon>settings</mat-icon>
-          <span>Configuracion</span>
-        </button>
-        <button (click)="logout()" mat-menu-item>
-          <mat-icon>logout</mat-icon>
-          <span>Cerrar sesion</span>
-        </button>
-      </mat-menu>
-    </div>
-
+  <div *ngIf="authService.isLoggedIn()">
     <button
-      *ngIf="!authService.isLoggedIn()"
-      [routerLink]="['/login']"
-      mat-raised-button
-      color="primary"
+      mat-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
     >
+      <span id="username-span">{{ authService.user.username }}</span>
       <mat-icon>account_circle</mat-icon>
-      Entrar
     </button>
-  </mat-toolbar>
-</p>
+    <mat-menu #menu="matMenu">
+      <button
+        [routerLink]="['channel/' + authService.user.id + '/videos']"
+        mat-menu-item
+      >
+        <mat-icon>account_circle</mat-icon>
+        <span>Tu canal</span>
+      </button>
+      <button [routerLink]="['settings/account']" mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Configuracion</span>
+      </button>
+      <button (click)="logout()" mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Cerrar sesion</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <button
+    *ngIf="!authService.isLoggedIn()"
+    [routerLink]="['/login']"
+    mat-raised-button
+    color="primary"
+  >
+    <mat-icon>account_circle</mat-icon>
+    Entrar
+  </button>
+</mat-toolbar>

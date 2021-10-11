@@ -34,7 +34,25 @@ export class VideosComponent implements OnInit {
     let size = 4;
 
     for (let i = 0; i < videos.length; i += size) {
-      chunkedVideos.push(videos.slice(i, i + size));
+      //chunkedVideos.push(videos.slice(i, i + size));
+
+      //Se obtienen size numero de videos videos osea una fila (row).
+      let rowVideos = videos.slice(i, i + size);
+
+      chunkedVideos.push(rowVideos);
+    }
+
+    //Se obtiene la ultima fila.
+    let lastRow = chunkedVideos.pop();
+
+    if (lastRow) {
+      let emptyItemsSize = size - lastRow.length;
+
+      for (let i = 0; i < emptyItemsSize; i++) {
+        lastRow.push({} as Video);
+      }
+
+      chunkedVideos.push(lastRow);
     }
 
     return chunkedVideos;

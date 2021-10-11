@@ -10,6 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'La Videos';
   layoutAlign = 'column';
+  topBarSpacer = true;
 
   constructor(
     public loadingPageService: LoadingPageService,
@@ -26,8 +27,10 @@ export class AppComponent {
           this.router.url.includes('/channel')
         ) {
           this.layoutAlign = 'column';
+          this.topBarSpacer = false;
         } else {
           this.layoutAlign = 'row';
+          this.topBarSpacer = true;
         }
       }
     });

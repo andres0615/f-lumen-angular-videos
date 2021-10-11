@@ -24,8 +24,11 @@ export class ChannelVideosComponent implements OnInit {
   }
 
   getVideos(): void {
-    this.videoService.getVideos().subscribe((videos) => {
-      console.log(videos);
+    const userId = this.getUserId();
+    //console.log(userId);
+
+    this.videoService.getVideosByUserId(userId).subscribe((videos) => {
+      //console.log(videos);
       this.rowsVideos = this.chunk(videos);
       this.loadingPageService.setLoading(false);
     });
@@ -35,14 +38,30 @@ export class ChannelVideosComponent implements OnInit {
     let chunkedVideos = [];
     let size = 4;
 
-    for (let i = 0; i < videos.length; i += size) {
-      chunkedVideos.push(videos.slice(i, i + size));
+    for (let i = 0; i <= videos.length; i += size) {
+      //Se obtienen size numero de videos videos osea una fila (row).
+      let rowVideos = videos.slice(i, i + size);
+
+      chunkedVideos.push(rowVideos);
+    }
+
+    //Se obtiene la ultima fila.
+    let lastRow = chunkedVideos.pop();
+
+    if (lastRow) {
+      let emptyItemsSize = size - lastRow.length;
+
+      for (let i = 0; i < emptyItemsSize; i++) {
+        lastRow.push({} as Video);
+      }
+
+      chunkedVideos.push(lastRow);
     }
 
     return chunkedVideos;
   }
 
   getUserId() {
-    return Number(this.route.snapshot.paramMap.get('user_id'));
+    return Number(this.route.parent!.snapshot.paramMap.get('user_id'));
   }
 }
