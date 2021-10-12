@@ -25,7 +25,7 @@ export class OnlyLoggedUsersGuard implements CanActivate, CanActivateChild {
     | boolean
     | UrlTree {
     if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
       return false;
     }
 
@@ -40,7 +40,7 @@ export class OnlyLoggedUsersGuard implements CanActivate, CanActivateChild {
     | boolean
     | UrlTree {
     if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
       return false;
     }
 

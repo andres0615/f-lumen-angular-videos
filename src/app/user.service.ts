@@ -11,7 +11,10 @@ export class UserService {
   private usersUrl = environment.apiUrl + '/user'; // URL to web api
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({ 
+                  'Content-Type': 'multipart/form-data',
+                  /*'Accept': 'application/json' */
+                }),
   };
 
   constructor(private http: HttpClient) {}
@@ -20,5 +23,27 @@ export class UserService {
     const url = `${this.usersUrl}/${id}`;
 
     return this.http.get<User>(url);
+  }
+
+  updateUser(user: User, userPhoto?: File): Observable<User> {
+
+    //Se modifica para enviarse.
+
+    //let formData.FormData = new FormData();
+    let formData = new FormData();
+
+    formData.append('id', user.id as unknown as Blob);
+    formData.append('username', user.username as unknown as Blob);    
+    formData.append('created_at', user.created_at as unknown as Blob);
+    formData.append('updated_at', user.updated_at as unknown as Blob);    
+
+    if(userPhoto) {
+      formData.append('photo', userPhoto);
+      //console.log(userPhoto);
+    }
+
+    //console.log(formData);
+
+    return this.http.post<User>(this.usersUrl + '/' + user.id, formData, this.httpOptions);
   }
 }

@@ -10,7 +10,9 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(public authService: AuthService) {}
+  constructor(
+      public authService: AuthService,
+      ) {}
 
   intercept(
     req: HttpRequest<unknown>,
@@ -30,6 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
       }
 
       return next.handle(request);
+
     }
 
     return next.handle(request);
