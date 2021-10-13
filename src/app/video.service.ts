@@ -10,9 +10,6 @@ import { environment } from '../environments/environment';
 })
 export class VideoService {
   private videosUrl = environment.apiUrl + '/video'; // URL to web api
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
 
   constructor(private http: HttpClient) {}
 

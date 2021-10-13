@@ -19,11 +19,17 @@
       </div>
 
       <div class="meta-data-div" fxFlex>
-        <div fxLayout="row">
-          <div fxFlex>
+        <div fxLayout="row" fxLayoutAlign="none center">
+          <div fxFlex="1 1 30%">
             {{ video.created_at | date }}
           </div>
-          <div class="child-2" fxFlex></div>
+          <div fxFlex="1 1 30%">
+            <app-like-video
+              *ngIf="video.id && user.id"
+              [videoId]="video.id"
+              [userId]="user.id"
+            ></app-like-video>
+          </div>
         </div>
       </div>
 

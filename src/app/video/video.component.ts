@@ -3,6 +3,8 @@ import { Video } from '../video';
 import { VideoService } from '../video.service';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingPageService } from '../loading-page.service';
+import { AuthService } from '../auth.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-video',
@@ -10,28 +12,24 @@ import { LoadingPageService } from '../loading-page.service';
   styleUrls: ['./video.component.css'],
 })
 export class VideoComponent implements OnInit {
-  video: Video = {
-    id: 0,
-    title: '',
-    description: '',
-    video: '',
-    thumbnail: '',
-    user_id: 0,
-    username: '',
-    user_photo: '',
-    created_at: '',
-    updated_at: '',
-  };
+  video = {} as Video;
+
+  public user = {} as User;
 
   constructor(
     private route: ActivatedRoute,
     private videoService: VideoService,
-    public loadingPageService: LoadingPageService
+    public loadingPageService: LoadingPageService,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.loadingPageService.setLoading(true);
     this.getVideo();
+
+    this.authService.getUser().subscribe((user) => {
+      this.user = user;
+    });
   }
 
   getVideo(): void {

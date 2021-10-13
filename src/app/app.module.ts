@@ -30,6 +30,7 @@ import { AccountComponent } from './account/account.component';
 import { ChannelComponent } from './channel/channel.component';
 import { ChannelVideosComponent } from './channel-videos/channel-videos.component';
 import { ThumbnailVideoThemeOneComponent } from './thumbnail-video-theme-one/thumbnail-video-theme-one.component';
+import { LikeVideoComponent } from './like-video/like-video.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ThumbnailVideoThemeOneComponent } from './thumbnail-video-theme-one/thu
     ChannelComponent,
     ChannelVideosComponent,
     ThumbnailVideoThemeOneComponent,
+    LikeVideoComponent,
   ],
   imports: [
     BrowserModule,
