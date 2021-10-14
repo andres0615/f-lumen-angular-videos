@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutAlign="none center" id="like-comment-content">
+  <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
+    <button (click)="likeClick()" mat-icon-button>
+      <mat-icon>
+        {{ likeComment === true ? "thumb_up_alt" : "thumb_up_off_alt" }}
+      </mat-icon>
+    </button>
+  </div>
+  <div fxFlex="1 1 20%">{{ commentLikes }}</div>
+  <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
+    <button (click)="dislikeClick()" mat-icon-button>
+      <mat-icon>
+        {{ dislikeComment === true ? "thumb_down_alt" : "thumb_down_off_alt" }}
+      </mat-icon>
+    </button>
+  </div>
+  <div fxFlex="1 1 20%">{{ commentDislikes }}</div>
+</div>

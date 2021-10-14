@@ -16,8 +16,8 @@ export class CommentService {
 
   constructor(private http: HttpClient) {}
 
-  getComments(id: number): Observable<Comment[]> {
-    const url = `${this.commentsUrl}/video/${id}`;
+  getComments(videoId: number): Observable<Comment[]> {
+    const url = `${this.commentsUrl}/video/${videoId}`;
 
     return this.http.get<Comment[]>(url);
   }

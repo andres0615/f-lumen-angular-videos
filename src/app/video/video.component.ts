@@ -12,7 +12,7 @@ import { User } from '../user';
   styleUrls: ['./video.component.css'],
 })
 export class VideoComponent implements OnInit {
-  video = {} as Video;
+  public video = {} as Video;
 
   public user = {} as User;
 

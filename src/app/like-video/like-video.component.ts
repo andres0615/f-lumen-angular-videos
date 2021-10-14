@@ -14,9 +14,7 @@ export class LikeVideoComponent implements OnInit {
   @Input() videoId: number = 0;
   @Input() userId: number = 0;
 
-  //public likeIcon: string = 'thumb_up_off_alt';
   public videoLikes: number = 0;
-  //public dislikeIcon: string = 'thumb_down_off_alt';
   public videoDislikes: number = 0;
   public likeVideo: boolean = false;
   public dislikeVideo: boolean = false;
@@ -54,9 +52,6 @@ export class LikeVideoComponent implements OnInit {
   }
 
   getUserLikeVideo() {
-    console.log(this.userId);
-    console.log(this.videoId);
-
     this.likeVideoService
       .getUserLikeVideo(this.userId, this.videoId)
       .subscribe((likeVideo) => {
@@ -129,9 +124,5 @@ export class LikeVideoComponent implements OnInit {
     } else {
       this.router.navigate(['login']);
     }
-  }
-
-  getVideoId() {
-    return Number(this.route.snapshot.paramMap.get('id'));
   }
 }

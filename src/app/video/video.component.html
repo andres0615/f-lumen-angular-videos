@@ -61,7 +61,15 @@
       </div>
 
       <div class="comments-div" fxFlex>
-        <app-comments></app-comments>
+        <app-comments
+          [userId]="user.id"
+          [videoId]="video.id"
+          *ngIf="user.id && video.id && authService.isLoggedIn()"
+        ></app-comments>
+        <app-comments
+          [videoId]="video.id"
+          *ngIf="video.id && !authService.isLoggedIn()"
+        ></app-comments>
       </div>
     </div>
   </div>

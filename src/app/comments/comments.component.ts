@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../comment';
 import { CommentService } from '../comment.service';
 import { LoadingPageService } from '../loading-page.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-comments',
@@ -11,11 +12,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CommentsComponent implements OnInit {
   comments: Comment[] = [];
+  @Input() videoId: number = 0;
+  @Input() userId: number = 0;
 
   constructor(
     private commentService: CommentService,
     public loadingPageService: LoadingPageService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -24,9 +28,9 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    //const id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.commentService.getComments(id).subscribe((comments) => {
+    this.commentService.getComments(this.videoId).subscribe((comments) => {
       console.log(comments);
       this.comments = comments;
       this.loadingPageService.setLoading(false);

@@ -1,0 +1,21 @@
+.user-photo-div {
+  margin-right: 0.3em;
+}
+
+.user-photo-div img {
+  width: 100%;
+}
+
+.username-div {
+  margin-bottom: 0.5em;
+}
+
+.username-div a {
+  text-decoration: none;
+  color: black;
+  font-weight: 450;
+}
+
+#comment {
+  margin-bottom: 0.2em;
+}

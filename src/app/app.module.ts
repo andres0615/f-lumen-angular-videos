@@ -31,6 +31,8 @@ import { ChannelComponent } from './channel/channel.component';
 import { ChannelVideosComponent } from './channel-videos/channel-videos.component';
 import { ThumbnailVideoThemeOneComponent } from './thumbnail-video-theme-one/thumbnail-video-theme-one.component';
 import { LikeVideoComponent } from './like-video/like-video.component';
+import { LikeCommentComponent } from './like-comment/like-comment.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { LikeVideoComponent } from './like-video/like-video.component';
     ChannelVideosComponent,
     ThumbnailVideoThemeOneComponent,
     LikeVideoComponent,
+    LikeCommentComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,22 +3,14 @@
     <h2>Comentarios</h2>
   </div>
   <div class="comment" *ngFor="let comment of comments" fxFlex>
-    <div fxLayout="row">
-      <div class="user-photo-div" fxFlex="1 1 8%">
-        <a href="">
-          <img src="{{ comment.user_photo }}" />
-        </a>
-      </div>
-      <div fxFlex="1 1 92%">
-        <div fxLayout="column">
-          <div class="username-div" fxFlex>
-            <a href="">{{ comment.username }}</a>
-          </div>
-          <div fxFlex>
-            {{ comment.comment }}
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-comment
+      [comment]="comment"
+      [userId]="userId"
+      *ngIf="authService.isLoggedIn()"
+    ></app-comment>
+    <app-comment
+      [comment]="comment"
+      *ngIf="!authService.isLoggedIn()"
+    ></app-comment>
   </div>
 </div>

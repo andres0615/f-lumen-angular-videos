@@ -21,11 +21,15 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    this.router.events.subscribe((val) => {
-      if (!this.authService.isLoggedIn()) {
-        console.log(this.route.snapshot);
+    setInterval(() => {
+      if (this.router.url.includes('/settings')) {
+        if (!this.authService.isLoggedIn()) {
+          this.router.navigate(['login']);
+        }
       }
+    }, 1000);
 
+    this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         let fullWidth: boolean = false;
 

@@ -1,0 +1,32 @@
+<div fxLayout="row">
+  <div class="user-photo-div" fxFlex="1 1 8%">
+    <a href="">
+      <img src="{{ comment.user_photo }}" />
+    </a>
+  </div>
+  <div fxFlex="1 1 92%">
+    <div fxLayout="column">
+      <div class="username-div" fxFlex>
+        <a href="">{{ comment.username }}</a>
+      </div>
+      <div fxFlex id="comment">
+        {{ comment.comment }}
+      </div>
+      <div fxFlex>
+        <div fxLayout="row">
+          <div fxFlex="1 1 30%">
+            <app-like-comment
+              [userId]="userId"
+              [commentId]="comment.id"
+              *ngIf="authService.isLoggedIn()"
+            ></app-like-comment>
+            <app-like-comment
+              [commentId]="comment.id"
+              *ngIf="!authService.isLoggedIn()"
+            ></app-like-comment>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
