@@ -21,13 +21,13 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    setInterval(() => {
+    /*setInterval(() => {
       if (this.router.url.includes('/settings')) {
         if (!this.authService.isLoggedIn()) {
           this.router.navigate(['login']);
         }
       }
-    }, 1000);
+    }, 1000);*/
 
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {

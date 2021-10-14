@@ -1,8 +1,13 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened>
-    <mat-nav-list>
+    <mat-nav-list fxHide.xs>
       <a mat-list-item href="">
         <span>Cuenta</span>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list fxHide fxShow.xs>
+      <a mat-list-item href="">
+        <mat-icon>account_circle</mat-icon>
       </a>
     </mat-nav-list>
   </mat-drawer>

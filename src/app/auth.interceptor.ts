@@ -5,12 +5,14 @@ import {
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, public router: Router) {}
 
   intercept(
     req: HttpRequest<unknown>,
@@ -32,6 +34,23 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(request);
     }
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      catchError((err) => {
+        console.log(err);
+
+        if (err.status === 401) {
+          // auto logout if 401 response returned from api
+
+          //this.authenticationService.logout();
+
+          //window.location.reload();
+          this.router.navigate(['/login']);
+        }
+
+        const error = err.error.messages || err.statusText;
+
+        return throwError(error);
+      })
+    );
   }
 }

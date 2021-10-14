@@ -32,6 +32,12 @@ export class AuthService {
     this.setWithExpiry('access_token', token.access_token, ttl);
     this.setWithExpiry('token_type', token.token_type, ttl);
 
+    let refreshTime = (this.getTokenExpiresIn() * 1000) / 4;
+
+    setInterval(() => {
+      this.refreshToken();
+    }, refreshTime);
+
     //this.refreshToken();
   }
 
@@ -73,12 +79,6 @@ export class AuthService {
   refreshToken() {
     if (this.getToken()) {
       this.http.post<any>(this.authUrl + '/refresh', []);
-
-      let refreshTime = (this.getTokenExpiresIn() * 1000) / 2;
-
-      setTimeout(() => {
-        this.refreshToken();
-      }, refreshTime);
     }
   }
 

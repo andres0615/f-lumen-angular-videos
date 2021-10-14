@@ -23,6 +23,7 @@ export class TopBarComponent implements OnInit {
 
   logout(): void {
     this.authService.logout().subscribe((res) => {
+      this.authService.logout();
       this.authService.deleteSession();
       this.router.navigate(['/']);
     });
