@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LikeVideo } from '../like-video';
 import { LikeVideoService } from '../like-video.service';
 import { LoadingPageService } from '../loading-page.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -24,13 +24,17 @@ export class LikeVideoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private likeVideoService: LikeVideoService,
     public loadingPageService: LoadingPageService,
     public authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.getUserLikeVideo();
+    if (this.authService.isLoggedIn()) {
+      this.getUserLikeVideo();
+    }
+
     this.getVideoTotalLikes();
     this.getVideoTotalDislikes();
   }
@@ -88,35 +92,43 @@ export class LikeVideoComponent implements OnInit {
   }
 
   likeClick() {
-    this.dislikeVideo = false;
-    this.likeVideo = !this.likeVideo;
+    if (this.authService.isLoggedIn()) {
+      this.dislikeVideo = false;
+      this.likeVideo = !this.likeVideo;
 
-    this.likeVideoService
-      .deleteUserLikeVideo(this.userLikeVideo)
-      .subscribe((res) => {
-        if (this.likeVideo == true) {
-          this.setUserLikeVideo(true);
-        } else {
-          this.getUserLikeVideo();
-          this.getVideoTotalLikes();
-        }
-      });
+      this.likeVideoService
+        .deleteUserLikeVideo(this.userLikeVideo)
+        .subscribe((res) => {
+          if (this.likeVideo == true) {
+            this.setUserLikeVideo(true);
+          } else {
+            this.getUserLikeVideo();
+            this.getVideoTotalLikes();
+          }
+        });
+    } else {
+      this.router.navigate(['login']);
+    }
   }
 
   dislikeClick() {
-    this.likeVideo = false;
-    this.dislikeVideo = !this.dislikeVideo;
+    if (this.authService.isLoggedIn()) {
+      this.likeVideo = false;
+      this.dislikeVideo = !this.dislikeVideo;
 
-    this.likeVideoService
-      .deleteUserLikeVideo(this.userLikeVideo)
-      .subscribe((res) => {
-        if (this.dislikeVideo == true) {
-          this.setUserLikeVideo(false);
-        } else {
-          this.getUserLikeVideo();
-          this.getVideoTotalDislikes();
-        }
-      });
+      this.likeVideoService
+        .deleteUserLikeVideo(this.userLikeVideo)
+        .subscribe((res) => {
+          if (this.dislikeVideo == true) {
+            this.setUserLikeVideo(false);
+          } else {
+            this.getUserLikeVideo();
+            this.getVideoTotalDislikes();
+          }
+        });
+    } else {
+      this.router.navigate(['login']);
+    }
   }
 
   getVideoId() {

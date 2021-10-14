@@ -27,9 +27,13 @@ export class VideoComponent implements OnInit {
     this.loadingPageService.setLoading(true);
     this.getVideo();
 
-    this.authService.getUser().subscribe((user) => {
-      this.user = user;
-    });
+    if (this.authService.isLoggedIn()) {
+      this.loadingPageService.setLoading(true);
+      this.authService.getUser().subscribe((user) => {
+        this.user = user;
+        this.loadingPageService.setLoading(false);
+      });
+    }
   }
 
   getVideo(): void {

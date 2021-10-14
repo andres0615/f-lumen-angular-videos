@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoadingPageService } from './loading-page.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,17 @@ export class AppComponent {
 
   constructor(
     public loadingPageService: LoadingPageService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
     this.router.events.subscribe((val) => {
+      if (!this.authService.isLoggedIn()) {
+        console.log(this.route.snapshot);
+      }
+
       if (val instanceof NavigationEnd) {
         let fullWidth: boolean = false;
 

@@ -25,9 +25,13 @@
           </div>
           <div fxFlex="1 1 30%">
             <app-like-video
-              *ngIf="video.id && user.id"
+              *ngIf="video.id && user.id && authService.isLoggedIn()"
               [videoId]="video.id"
               [userId]="user.id"
+            ></app-like-video>
+            <app-like-video
+              *ngIf="video.id && !authService.isLoggedIn()"
+              [videoId]="video.id"
             ></app-like-video>
           </div>
         </div>
