@@ -4,10 +4,20 @@
       <img src="{{ comment.user_photo }}" />
     </a>
   </div>
-  <div fxFlex="1 1 92%">
+  <div fxFlex="1 1 92%" id="layout-child-two">
     <div fxLayout="column">
-      <div class="username-div" fxFlex>
+      <div class="username-div">
         <a href="">{{ comment.username }}</a>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="commentMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #commentMenu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar</span>
+          </button>
+        </mat-menu>
       </div>
       <div fxFlex id="comment">
         {{ comment.comment }}

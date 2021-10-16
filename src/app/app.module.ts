@@ -33,6 +33,7 @@ import { ThumbnailVideoThemeOneComponent } from './thumbnail-video-theme-one/thu
 import { LikeVideoComponent } from './like-video/like-video.component';
 import { LikeCommentComponent } from './like-comment/like-comment.component';
 import { CommentComponent } from './comment/comment.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { CommentComponent } from './comment/comment.component';
     LikeVideoComponent,
     LikeCommentComponent,
     CommentComponent,
+    AddCommentComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { LoadingPageService } from '../loading-page.service';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-video',
@@ -15,6 +16,8 @@ export class VideoComponent implements OnInit {
   public video = {} as Video;
 
   public user = {} as User;
+
+  public environment = environment;
 
   constructor(
     private route: ActivatedRoute,

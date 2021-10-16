@@ -1,0 +1,22 @@
+<div fxLayout="column" id="add-comment-layout">
+  <div fxFlex class="add-comment-div">
+    <mat-form-field
+      class="comment-form-field mat-app-background"
+      appearance="fill"
+    >
+      <mat-label>Dejar un comentario publico ...</mat-label>
+      <textarea
+        [matAutosizeMinRows]="3"
+        [(ngModel)]="comment.comment"
+        [matTextareaAutosize]="true"
+        matInput
+        placeholder="Dejar un comentario publico ..."
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <div fxFlex class="add-comment-div add-comment-button">
+    <button mat-raised-button color="primary" (click)="addComment()">
+      Comentar
+    </button>
+  </div>
+</div>

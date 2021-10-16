@@ -2,6 +2,13 @@
   <div fxFlex>
     <h2>Comentarios</h2>
   </div>
+  <div fxFlex>
+    <app-add-comment
+      [videoId]="videoId"
+      [userId]="userId"
+      (newComment)="addComment($event)"
+    ></app-add-comment>
+  </div>
   <div class="comment" *ngFor="let comment of comments" fxFlex>
     <app-comment
       [comment]="comment"

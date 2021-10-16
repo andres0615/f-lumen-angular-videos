@@ -10,9 +10,6 @@ import { environment } from '../environments/environment';
 })
 export class CommentService {
   private commentsUrl = environment.apiUrl + '/comment'; // URL to web api
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
 
   constructor(private http: HttpClient) {}
 
@@ -20,5 +17,11 @@ export class CommentService {
     const url = `${this.commentsUrl}/video/${videoId}`;
 
     return this.http.get<Comment[]>(url);
+  }
+
+  storeComment(comment: Comment) {
+    const url = `${this.commentsUrl}`;
+
+    return this.http.post<Comment>(url, comment);
   }
 }

@@ -11,7 +11,7 @@
           id="video-component-video"
           src="{{ video.video }}"
           controls=""
-          autoplay
+          [autoplay]="environment.production == true"
         ></video>
       </div>
 

@@ -36,4 +36,9 @@ export class CommentsComponent implements OnInit {
       this.loadingPageService.setLoading(false);
     });
   }
+
+  addComment(comment: Comment) {
+    //console.log(comment);
+    this.comments.unshift(comment);
+  }
 }
