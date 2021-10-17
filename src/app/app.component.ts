@@ -18,19 +18,15 @@ export class AppComponent {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService
-  ) {}
+  ) {
+    //this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit() {
-    /*setInterval(() => {
-      if (this.router.url.includes('/settings')) {
-        if (!this.authService.isLoggedIn()) {
-          this.router.navigate(['login']);
-        }
-      }
-    }, 1000);*/
-
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
+        //this.router.navigated = false;
+
         let fullWidth: boolean = false;
 
         if (

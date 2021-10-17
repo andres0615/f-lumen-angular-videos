@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { UserService } from '../user.service';
 import { User } from '../user';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingPageService } from '../loading-page.service';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
@@ -25,7 +25,8 @@ export class ChannelComponent implements OnInit {
     public authService: AuthService,
     public userService: UserService,
     private videoService: VideoService,
-    public loadingPageService: LoadingPageService
+    public loadingPageService: LoadingPageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

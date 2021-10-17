@@ -28,4 +28,14 @@ export class TopBarComponent implements OnInit {
       this.router.navigate(['/']);
     });
   }
+
+  navigateToChannel() {
+    const url = '/channel/' + this.authService.user.id + '/videos';
+
+    this.router.navigate([url]);
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  }
 }

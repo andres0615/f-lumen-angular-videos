@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+  ParamMap,
+} from '@angular/router';
 import { LoadingPageService } from '../loading-page.service';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
@@ -15,8 +20,11 @@ export class ChannelVideosComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private videoService: VideoService,
-    public loadingPageService: LoadingPageService
-  ) {}
+    public loadingPageService: LoadingPageService,
+    private router: Router
+  ) {
+    //this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit(): void {
     this.loadingPageService.setLoading(true);

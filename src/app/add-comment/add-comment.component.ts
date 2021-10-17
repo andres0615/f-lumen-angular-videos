@@ -21,11 +21,13 @@ export class AddCommentComponent implements OnInit {
   }
 
   addComment() {
-    this.commentService.storeComment(this.comment).subscribe((comment) => {
-      this.comment = comment;
-      this.newComment.emit(this.comment);
-      this.initComment();
-    });
+    if (this.comment.comment) {
+      this.commentService.storeComment(this.comment).subscribe((comment) => {
+        this.comment = comment;
+        this.newComment.emit(this.comment);
+        this.initComment();
+      });
+    }
   }
 
   initComment() {
