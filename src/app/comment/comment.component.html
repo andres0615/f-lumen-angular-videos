@@ -9,11 +9,15 @@
       <div class="username-div">
         <a href="">{{ comment.username }}</a>
         <span class="example-spacer"></span>
-        <button mat-icon-button [matMenuTriggerFor]="commentMenu">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="commentMenu"
+          *ngIf="comment.user_id == userId"
+        >
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #commentMenu="matMenu">
-          <button mat-menu-item>
+          <button (click)="delete()" mat-menu-item>
             <mat-icon>delete</mat-icon>
             <span>Eliminar</span>
           </button>

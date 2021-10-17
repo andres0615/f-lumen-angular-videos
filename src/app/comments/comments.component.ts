@@ -41,4 +41,15 @@ export class CommentsComponent implements OnInit {
     //console.log(comment);
     this.comments.unshift(comment);
   }
+
+  deleteComment(commentId: number) {
+    this.commentService.deleteComment(commentId).subscribe((res) => {
+      for (var i = 0; i < this.comments.length; i++) {
+        if (this.comments[i].id == commentId) {
+          this.comments.splice(i, 1);
+          break;
+        }
+      }
+    });
+  }
 }

@@ -24,4 +24,10 @@ export class CommentService {
 
     return this.http.post<Comment>(url, comment);
   }
+
+  deleteComment(id: number) {
+    const url = `${this.commentsUrl}/${id}`;
+
+    return this.http.delete(url);
+  }
 }
