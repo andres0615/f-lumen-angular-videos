@@ -41,7 +41,13 @@
       <div fxFlex>Si aun no tienes una cuenta.</div>
       <br />
       <div fxFlex>
-        <a mat-raised-button color="primary" href="">Registrate</a>
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/register']"
+          href=""
+          >Registrate</a
+        >
       </div>
     </div>
   </div>

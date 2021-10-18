@@ -1,0 +1,102 @@
+<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+  <div fxFlex="1 1 35%"></div>
+  <div id="login-div" fxFlex="1 1 30%" class="mat-app-background">
+    <div fxLayout="column">
+      <div id="h1-div" fxFlex>
+        <h1>Registrarse</h1>
+      </div>
+      <div fxFlex>
+        <form [formGroup]="registerForm">
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input
+              name="username"
+              type="text"
+              formControlName="username"
+              matInput
+            />
+            <mat-error *ngIf="registerForm.controls.username.errors?.required">
+              Por favor ingrese el nombre de usuario
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input
+              name="password"
+              [type]="hidePassword ? 'password' : 'text'"
+              matInput
+              formControlName="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword"
+            >
+              <mat-icon>{{
+                hidePassword ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            </button>
+            <mat-error *ngIf="registerForm.controls.password.errors?.required">
+              Por favor ingrese el password
+            </mat-error>
+            <mat-error
+              *ngIf="
+                registerForm.controls.password.touched &&
+                registerForm.controls.password.errors?.passwordMismatch
+              "
+            >
+              Los passwords no coinciden
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Repetir password</mat-label>
+            <input
+              name="confirmPassword"
+              [type]="hideConfirmPassword ? 'password' : 'text'"
+              formControlName="confirmPassword"
+              matInput
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hideConfirmPassword = !hideConfirmPassword"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hideConfirmPassword"
+            >
+              <mat-icon>{{
+                hideConfirmPassword ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            </button>
+            <mat-error
+              *ngIf="registerForm.controls.confirmPassword.errors?.required"
+            >
+              Por favor confirme el password
+            </mat-error>
+            <mat-error
+              *ngIf="
+                registerForm.controls.confirmPassword.touched &&
+                registerForm.controls.confirmPassword.errors?.passwordMismatch
+              "
+            >
+              Los passwords no coinciden
+            </mat-error>
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            (click)="register()"
+            id="login-button"
+            color="primary"
+          >
+            Registrarse
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="1 1 35%"></div>
+</div>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AccountComponent } from './account/account.component';
 import { OnlyLoggedUsersGuard } from './only-logged-users.guard';
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [OnlyNoLoggedUsersGuard],
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
     canActivate: [OnlyNoLoggedUsersGuard],
   },
   {

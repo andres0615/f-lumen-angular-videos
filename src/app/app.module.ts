@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -34,6 +34,8 @@ import { LikeVideoComponent } from './like-video/like-video.component';
 import { LikeCommentComponent } from './like-comment/like-comment.component';
 import { CommentComponent } from './comment/comment.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { RegisterComponent } from './register/register.component';
+import { ConfirmPasswordDirective } from './confirm-password.directive';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     LikeCommentComponent,
     CommentComponent,
     AddCommentComponent,
+    RegisterComponent,
+    ConfirmPasswordDirective,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +76,7 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     MatSidenavModule,
     MatListModule,
     MatTabsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
