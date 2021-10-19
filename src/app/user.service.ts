@@ -10,13 +10,6 @@ import { Observable, of } from 'rxjs';
 export class UserService {
   private usersUrl = environment.apiUrl + '/user'; // URL to web api
 
-  /*httpOptions = {
-    headers: new HttpHeaders({ 
-                  'Content-Type': 'multipart/form-data',
-                  'Accept': 'application/json'
-                }),
-  };*/
-
   httpOptions = {
     headers: new HttpHeaders({
       contentType: 'multipart/form-data',
@@ -56,5 +49,11 @@ export class UserService {
       formData,
       /*{}*/ this.httpOptions
     );
+  }
+
+  storeUser(user: User) {
+    const url = `${this.usersUrl}`;
+
+    return this.http.post<User>(url, user);
   }
 }

@@ -2,16 +2,16 @@
   text-align: center;
 }
 
-#login-div {
+#register-div {
   padding: 2em 3em;
   text-align: center;
   border-radius: 3%;
 }
 
-#login-div mat-form-field {
+#register-div mat-form-field {
   width: 100%;
 }
 
-#login-button {
+#register-button {
   margin-top: 1em;
 }

@@ -8,6 +8,10 @@ import {
 } from '@angular/forms';
 import { matchPassword } from '../confirm-password.directive';
 import { Observable } from 'rxjs';
+import { UserService } from '../user.service';
+import { User } from '../user';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +26,12 @@ export class RegisterComponent implements OnInit {
   hideConfirmPassword: boolean = true;
   registerForm = {} as FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    public userService: UserService,
+    public authService: AuthService,
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group(
@@ -35,28 +44,31 @@ export class RegisterComponent implements OnInit {
         validator: matchPassword('password', 'confirmPassword'),
       }
     );
-
-    /*this.repeatPassword = new FormControl('', [
-      Validators.required,
-      isEqualValidator(this.password)
-    ]);
-
-    this.password = new FormControl('', [
-      Validators.required,
-      isEqualValidator(this.repeatPassword)
-    ]);
-
-
-    this.password.valueChanges.subscribe(() => {
-      this.repeatPassword.updateValueAndValidity()
-    });
-
-    this.repeatPassword.valueChanges.subscribe(() => {
-      this.password.updateValueAndValidity()
-    });*/
   }
 
-  register() {}
+  register(user: User) {
+    if (this.registerForm.valid) {
+      this.userService.storeUser(user).subscribe((user) => {
+        //console.log(user);
+        this.login();
+      });
+    }
+  }
 
-  forceValidAgain() {}
+  login(): void {
+    this.authService
+      .login(
+        this.registerForm.controls.username.value,
+        this.registerForm.controls.password.value
+      )
+      .subscribe((res) => {
+        this.authService.setSession(res);
+
+        this.authService.getUser().subscribe((user) => {
+          this.authService.setUser(user);
+        });
+
+        this.router.navigate(['/']);
+      });
+  }
 }
