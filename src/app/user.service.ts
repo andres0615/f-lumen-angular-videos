@@ -28,26 +28,21 @@ export class UserService {
   updateUser(user: User, userPhoto?: File): Observable<User> {
     //Se modifica para enviarse.
 
-    //let formData.FormData = new FormData();
     let formData = new FormData();
 
     formData.append('id', user.id as unknown as Blob);
     formData.append('username', user.username as unknown as Blob);
-    formData.append('test', 'test');
     formData.append('created_at', user.created_at as unknown as Blob);
     formData.append('updated_at', user.updated_at as unknown as Blob);
 
     if (userPhoto) {
       formData.append('photo', userPhoto);
-      //console.log(userPhoto);
     }
-
-    //console.log(formData);
 
     return this.http.post<User>(
       this.usersUrl + '/' + user.id,
       formData,
-      /*{}*/ this.httpOptions
+      this.httpOptions
     );
   }
 

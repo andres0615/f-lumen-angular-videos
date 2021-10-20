@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+#video-td {
+  padding: 1em 2em;
+}
+
+#action-buttons-layout > div {
+  text-align: center;
+  padding-bottom: 1em;
+}

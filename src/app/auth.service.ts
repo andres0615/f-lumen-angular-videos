@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
 export class AuthService {
   private authUrl = environment.apiUrl + '/auth'; // URL to web api
   public user = {} as User;
+  public refreshTokenExecuted = false;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -31,14 +32,6 @@ export class AuthService {
 
     this.setWithExpiry('access_token', token.access_token, ttl);
     this.setWithExpiry('token_type', token.token_type, ttl);
-
-    let refreshTime = (this.getTokenExpiresIn() * 1000) / 4;
-
-    setInterval(() => {
-      this.refreshToken();
-    }, refreshTime);
-
-    //this.refreshToken();
   }
 
   getUser(): Observable<User> {
@@ -78,7 +71,10 @@ export class AuthService {
 
   refreshToken() {
     if (this.getToken()) {
-      this.http.post<any>(this.authUrl + '/refresh', []);
+      this.http.post<any>(this.authUrl + '/refresh', []).subscribe((token) => {
+        this.setSession(token);
+        //console.log('refresh token');
+      });
     }
   }
 

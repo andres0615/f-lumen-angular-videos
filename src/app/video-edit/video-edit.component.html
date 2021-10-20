@@ -1,0 +1,51 @@
+<form [formGroup]="videoForm" (ngSubmit)="save(videoForm.value)">
+  <div fxLayout="row">
+    <div fxFlex="1 1 40%">
+      <video
+        id="video-edit-component-video"
+        src="{{ video.video }}"
+        controls=""
+        [autoplay]="environment.production == true"
+      ></video>
+    </div>
+
+    <div fxFlex>
+      <div fxLayout="column">
+        <div fxFlex id="form-div">
+          <mat-form-field appearance="fill">
+            <mat-label>Titulo</mat-label>
+            <input name="title" type="text" formControlName="title" matInput />
+            <mat-error *ngIf="videoForm.controls.title.errors?.required">
+              Por favor ingrese el titulo
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Descripcion</mat-label>
+            <textarea
+              [matAutosizeMinRows]="3"
+              [matTextareaAutosize]="true"
+              matInput
+              formControlName="description"
+              placeholder="Dejar un comentario publico ..."
+            ></textarea>
+            <mat-error *ngIf="videoForm.controls.description.errors?.required">
+              Por favor ingrese la descripcion
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex></div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div fxLayout="row">
+    <div id="save-button-div" fxFlex>
+      <button mat-raised-button id="save-button" color="primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>

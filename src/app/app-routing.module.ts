@@ -9,7 +9,10 @@ import { AccountComponent } from './account/account.component';
 import { OnlyLoggedUsersGuard } from './only-logged-users.guard';
 import { OnlyNoLoggedUsersGuard } from './only-no-logged-users.guard';
 import { ChannelComponent } from './channel/channel.component';
+import { AdminVideosComponent } from './admin-videos/admin-videos.component';
 import { ChannelVideosComponent } from './channel-videos/channel-videos.component';
+import { VideoEditComponent } from './video-edit/video-edit.component';
+import { VideoUploadComponent } from './video-upload/video-upload.component';
 
 const routes: Routes = [
   { path: '', component: VideosComponent },
@@ -35,6 +38,18 @@ const routes: Routes = [
           {
             path: 'account',
             component: AccountComponent,
+          },
+          {
+            path: 'videos',
+            component: AdminVideosComponent,
+          },
+          {
+            path: 'videos/edit/:videoId',
+            component: VideoEditComponent,
+          },
+          {
+            path: 'videos/upload',
+            component: VideoUploadComponent,
           },
         ],
       },

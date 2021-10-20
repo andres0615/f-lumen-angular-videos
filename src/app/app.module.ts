@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
@@ -36,6 +37,9 @@ import { CommentComponent } from './comment/comment.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { RegisterComponent } from './register/register.component';
 import { ConfirmPasswordDirective } from './confirm-password.directive';
+import { AdminVideosComponent } from './admin-videos/admin-videos.component';
+import { VideoEditComponent } from './video-edit/video-edit.component';
+import { VideoUploadComponent } from './video-upload/video-upload.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +61,9 @@ import { ConfirmPasswordDirective } from './confirm-password.directive';
     AddCommentComponent,
     RegisterComponent,
     ConfirmPasswordDirective,
+    AdminVideosComponent,
+    VideoEditComponent,
+    VideoUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +83,7 @@ import { ConfirmPasswordDirective } from './confirm-password.directive';
     MatSidenavModule,
     MatListModule,
     MatTabsModule,
+    MatTableModule,
     ReactiveFormsModule,
   ],
   providers: [

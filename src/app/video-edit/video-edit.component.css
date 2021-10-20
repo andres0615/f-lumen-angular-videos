@@ -1,0 +1,16 @@
+#video-edit-component-video {
+  width: 100%;
+}
+
+#form-div mat-form-field {
+  width: 100%;
+}
+
+#form-div {
+  padding: 0 1em;
+}
+
+#save-button-div {
+  width: 100%;
+  text-align: center;
+}

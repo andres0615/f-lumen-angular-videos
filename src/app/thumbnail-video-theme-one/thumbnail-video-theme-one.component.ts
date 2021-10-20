@@ -19,6 +19,7 @@ export class ThumbnailVideoThemeOneComponent implements OnInit {
     created_at: '',
     updated_at: '',
   };
+  @Input() titleColor: string = '#000';
 
   constructor() {}
 

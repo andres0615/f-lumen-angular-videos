@@ -11,7 +11,6 @@ import { UserService } from '../user.service';
 export class AccountComponent implements OnInit {
   public user = {} as User;
   public newUser = {} as User;
-  //public photo = ;
   private userPhoto?: File;
 
   constructor(
@@ -28,15 +27,6 @@ export class AccountComponent implements OnInit {
 
   updateUser() {
     if (this.user) {
-      //Se clona el objeto original.
-      //this.newUser = JSON.parse(JSON.stringify(this.user));
-
-      //Se modifica para enviarse.
-      //this.newUser.photo = 'test';
-
-      /*let photo;
-       */
-
       this.userService
         .updateUser(this.user, this.userPhoto)
         .subscribe((user) => {
@@ -48,23 +38,15 @@ export class AccountComponent implements OnInit {
   photoChange(event: any) {
     let fileList: FileList = event.target.files;
     if (fileList.length > 0) {
-      this.userPhoto = fileList[0];
+      const file = fileList[0];
 
-      //let formData:FormData = new FormData();
-      //formData.append('uploadFile', file, file.name);
+      this.userPhoto = file;
 
-      /*let headers = new Headers();
-
-        headers.append('Content-Type', 'multipart/form-data');
-        headers.append('Accept', 'application/json');
-        let options = new RequestOptions({ headers: headers });
-        this.http.post(`${this.apiEndPoint}`, formData, options)
-            .map(res => res.json())
-            .catch(error => Observable.throw(error))
-            .subscribe(
-                data => console.log('success'),
-                error => console.log(error)
-            )*/
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.user.photo = reader.result;
+      };
     }
   }
 }

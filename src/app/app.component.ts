@@ -18,13 +18,21 @@ export class AppComponent {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService
-  ) {
-    //this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-  }
+  ) {}
 
   ngOnInit() {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
+        if (!this.authService.refreshTokenExecuted) {
+          this.authService.refreshTokenExecuted = true;
+
+          let refreshTime = 10000;
+
+          setInterval(() => {
+            this.authService.refreshToken();
+          }, refreshTime);
+        }
+
         //this.router.navigated = false;
 
         let fullWidth: boolean = false;
