@@ -54,9 +54,9 @@ export class VideoUploadComponent implements OnInit {
       /*this.videoService.updateVideo(video).subscribe((video) => {
         this.video = video;
       });*/
-      this.videoService.storeVideo(video, this.videoFile).subscribe((video) => {
+      this.videoService.storeVideo(video, this.videoFile).subscribe((resVideo) => {
         //this.video = video;
-        console.log('subido ' + video.id);
+        console.log('subido ' + resVideo.id);
       });
     }
   }
