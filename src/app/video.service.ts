@@ -62,4 +62,10 @@ export class VideoService {
       this.httpOptions*/
     );
   }
+
+  deleteVideo(id: number) {
+    const url = `${this.videosUrl}/${id}`;
+
+    return this.http.delete(url);
+  }
 }

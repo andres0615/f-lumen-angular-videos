@@ -8,10 +8,16 @@
 
 <br />
 
-<table mat-table [dataSource]="videos" class="mat-elevation-z8">
+<table mat-table #videosTable [dataSource]="videos" class="mat-elevation-z8">
   <ng-container matColumnDef="video">
     <th mat-header-cell *matHeaderCellDef>Video</th>
-    <td id="video-td" style="width: 45%" mat-cell *matCellDef="let element">
+    <td
+      id="video-td"
+      style="width: 45%"
+      [ngStyle.xs]="{ padding: 0 }"
+      mat-cell
+      *matCellDef="let element"
+    >
       <app-thumbnail-video-theme-one
         [video]="element"
         [titleColor]="'#fff'"
@@ -38,7 +44,13 @@
           </a>
         </div>
         <div fxFlex>
-          <a mat-raised-button color="primary"> Eliminar </a>
+          <button
+            (click)="deleteVideo(element.id)"
+            mat-raised-button
+            color="primary"
+          >
+            Eliminar
+          </button>
         </div>
         <div fxFlex></div>
       </div>

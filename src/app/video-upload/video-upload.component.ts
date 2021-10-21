@@ -71,12 +71,14 @@ export class VideoUploadComponent implements OnInit {
 
     this.videoFile = file;
 
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      //console.log(reader.result);
-      this.video.video = reader.result;
-      console.log(this.video.video);
-    };
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        //console.log(reader.result);
+        this.video.video = reader.result;
+        console.log(this.video.video);
+      };
+    }
   }
 }
