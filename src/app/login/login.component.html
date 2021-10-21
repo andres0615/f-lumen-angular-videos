@@ -6,31 +6,37 @@
         <h1>Entrar</h1>
       </div>
       <div fxFlex>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
           <mat-form-field appearance="fill">
             <mat-label>Username</mat-label>
             <input
-              [(ngModel)]="username"
+              formControlName="username"
               name="username"
               type="text"
               matInput
             />
+            <mat-error *ngIf="loginForm.controls.username.errors?.required">
+              Por favor ingrese el nombre de usuario
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
             <input
-              [(ngModel)]="password"
+              formControlName="password"
               name="password"
               type="password"
               matInput
             />
+            <mat-error *ngIf="loginForm.controls.password.errors?.required">
+              Por favor ingrese el password
+            </mat-error>
           </mat-form-field>
 
           <button
             mat-raised-button
-            (click)="login()"
             id="login-button"
+            type="submit"
             color="primary"
           >
             Entrar

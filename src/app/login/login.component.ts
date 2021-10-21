@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import {
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+} from '@angular/forms';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -10,20 +18,37 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
+  loginForm = {} as FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
 
-  ngOnInit(): void {}
-
-  login(): void {
-    this.authService.login(this.username, this.password).subscribe((res) => {
-      this.authService.setSession(res);
-
-      this.authService.getUser().subscribe((user) => {
-        this.authService.setUser(user);
-      });
-
-      this.router.navigate(['/']);
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     });
+  }
+
+  login(user: User): void {
+    if (this.loginForm.valid) {
+      this.authService
+        .login(
+          this.loginForm.controls.username.value,
+          this.loginForm.controls.password.value
+        )
+        .subscribe((res) => {
+          this.authService.setSession(res);
+
+          this.authService.getUser().subscribe((user) => {
+            this.authService.setUser(user);
+          });
+
+          this.router.navigate(['/']);
+        });
+    }
   }
 }
