@@ -1,5 +1,11 @@
+<div fxLayout="column">
+  <div fxFlex id="h1-div">
+    <h1>Editar video</h1>
+  </div>
+</div>
+
 <form [formGroup]="videoForm" (ngSubmit)="save(videoForm.value)">
-  <div fxLayout="row">
+  <div fxLayout="row" fxLayout.xs="column">
     <div fxFlex="1 1 40%">
       <video
         id="video-edit-component-video"
@@ -8,6 +14,8 @@
         [autoplay]="environment.production == true"
       ></video>
     </div>
+
+    <br />
 
     <div fxFlex>
       <div fxLayout="column">

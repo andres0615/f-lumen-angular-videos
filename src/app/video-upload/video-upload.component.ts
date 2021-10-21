@@ -51,13 +51,12 @@ export class VideoUploadComponent implements OnInit {
     console.log(video);
 
     if (this.videoForm.valid) {
-      /*this.videoService.updateVideo(video).subscribe((video) => {
-        this.video = video;
-      });*/
-      this.videoService.storeVideo(video, this.videoFile).subscribe((resVideo) => {
-        //this.video = video;
-        console.log('subido ' + resVideo.id);
-      });
+      this.videoService
+        .storeVideo(video, this.videoFile)
+        .subscribe((resVideo) => {
+          //this.video = video;
+          console.log('subido ' + resVideo.id);
+        });
     }
   }
 
