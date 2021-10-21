@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Video } from '../video';
 import { User } from '../user';
 import { VideoService } from '../video.service';
@@ -25,13 +25,15 @@ export class VideoUploadComponent implements OnInit {
   videoForm = {} as FormGroup;
   public photoSrc: string | ArrayBuffer | null = null;
   private videoFile?: File;
+  public uploadingVideo: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private videoService: VideoService,
     public loadingPageService: LoadingPageService,
     private fb: FormBuilder,
-    public authService: AuthService
+    public authService: AuthService,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
@@ -50,12 +52,16 @@ export class VideoUploadComponent implements OnInit {
   save(video: Video) {
     console.log(video);
 
-    if (this.videoForm.valid) {
+    if (this.videoForm.valid && this.videoFile) {
+      this.uploadingVideo = true;
+
       this.videoService
         .storeVideo(video, this.videoFile)
         .subscribe((resVideo) => {
           //this.video = video;
-          console.log('subido ' + resVideo.id);
+          //this.uploadingVideo = false;
+          //console.log('subido ' + resVideo.id);
+          this.router.navigate(['/settings/videos/edit/' + resVideo.id]);
         });
     }
   }

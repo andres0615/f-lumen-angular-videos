@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VideosComponent } from './videos/videos.component';
 import { VideoComponent } from './video/video.component';
@@ -40,6 +41,7 @@ import { ConfirmPasswordDirective } from './confirm-password.directive';
 import { AdminVideosComponent } from './admin-videos/admin-videos.component';
 import { VideoEditComponent } from './video-edit/video-edit.component';
 import { VideoUploadComponent } from './video-upload/video-upload.component';
+import { UploadingSpinnerComponent } from './uploading-spinner/uploading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { VideoUploadComponent } from './video-upload/video-upload.component';
     AdminVideosComponent,
     VideoEditComponent,
     VideoUploadComponent,
+    UploadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import { VideoUploadComponent } from './video-upload/video-upload.component';
     MatTabsModule,
     MatTableModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {

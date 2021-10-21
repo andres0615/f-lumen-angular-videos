@@ -71,21 +71,13 @@
   <br />
 
   <div fxLayout="row">
-    <div id="save-button-div" fxFlex>
+    <div id="save-button-div" *ngIf="!uploadingVideo" fxFlex>
       <button mat-raised-button id="save-button" color="primary">
         Subir video
       </button>
     </div>
+    <div id="spinner-div" *ngIf="uploadingVideo" fxFlex>
+      <app-uploading-spinner></app-uploading-spinner>
+    </div>
   </div>
 </form>
-
-<!-- <button (click)="photo.click()" mat-raised-button color="primary">
-		          Elegir video
-		        </button>
-		        <input
-		          (change)="photoChange($event)"
-		          #photo
-		          [hidden]="true"
-		          id="photo-input"
-		          type="file"
-		        /> -->
