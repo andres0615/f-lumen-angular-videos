@@ -1,13 +1,15 @@
 <div fxLayout="row">
   <div class="user-photo-div" fxFlex="1 1 8%">
-    <a href="">
+    <a [routerLink]="['/channel/' + comment.user_id + '/videos']">
       <img src="{{ comment.user_photo }}" />
     </a>
   </div>
   <div fxFlex="1 1 92%" id="layout-child-two">
     <div fxLayout="column">
       <div class="username-div">
-        <a href="">{{ comment.username }}</a>
+        <a [routerLink]="['/channel/' + comment.user_id + '/videos']">{{
+          comment.username
+        }}</a>
         <span class="example-spacer"></span>
         <button
           mat-icon-button

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { UserService } from '../user.service';
 import { User } from '../user';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { LoadingPageService } from '../loading-page.service';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
@@ -30,23 +30,25 @@ export class ChannelComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadingPageService.setLoading(true);
-    this.getUser();
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.loadingPageService.setLoading(true);
+      this.getUser();
 
-    //this.links.push('test');
-    //this.links.push('channel/' + this.getUserId() + '/videos');
+      //this.links.push('test');
+      //this.links.push('channel/' + this.getUserId() + '/videos');
 
-    const tabRoutes = [
-      {
-        link: 'channel/' + this.getUserId() + '/videos',
-        label: 'Videos',
-      },
-    ];
+      const tabRoutes = [
+        {
+          link: 'channel/' + this.getUserId() + '/videos',
+          label: 'Videos',
+        },
+      ];
 
-    this.links = tabRoutes;
+      this.links = tabRoutes;
 
-    this.loadingPageService.setLoading(true);
-    this.getVideos();
+      //this.loadingPageService.setLoading(true);
+      //this.getVideos();
+    });
   }
 
   getUser(): void {

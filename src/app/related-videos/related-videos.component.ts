@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
 import { LoadingPageService } from '../loading-page.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-related-videos',
@@ -9,6 +10,8 @@ import { LoadingPageService } from '../loading-page.service';
   styleUrls: ['./related-videos.component.css'],
 })
 export class RelatedVideosComponent implements OnInit {
+  @Input() videoId: number = 0;
+
   videos: Video[] = [];
 
   constructor(
@@ -26,5 +29,11 @@ export class RelatedVideosComponent implements OnInit {
       this.videos = videos;
       this.loadingPageService.setLoading(false);
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.videoId && !changes.videoId.firstChange) {
+      this.ngOnInit();
+    }
   }
 }

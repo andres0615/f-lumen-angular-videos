@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoadingPageService } from '../loading-page.service';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
@@ -27,16 +27,18 @@ export class VideoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadingPageService.setLoading(true);
-    this.getVideo();
-
-    if (this.authService.isLoggedIn()) {
+    this.route.paramMap.subscribe((params: ParamMap) => {
       this.loadingPageService.setLoading(true);
-      this.authService.getUser().subscribe((user) => {
-        this.user = user;
-        this.loadingPageService.setLoading(false);
-      });
-    }
+      this.getVideo();
+
+      if (this.authService.isLoggedIn()) {
+        this.loadingPageService.setLoading(true);
+        this.authService.getUser().subscribe((user) => {
+          this.user = user;
+          this.loadingPageService.setLoading(false);
+        });
+      }
+    });
   }
 
   getVideo(): void {

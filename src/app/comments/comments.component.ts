@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Comment } from '../comment';
 import { CommentService } from '../comment.service';
 import { LoadingPageService } from '../loading-page.service';
@@ -28,8 +28,6 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments(): void {
-    //const id = Number(this.route.snapshot.paramMap.get('id'));
-
     this.commentService.getComments(this.videoId).subscribe((comments) => {
       console.log(comments);
       this.comments = comments;
@@ -51,5 +49,11 @@ export class CommentsComponent implements OnInit {
         }
       }
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.videoId && !changes.videoId.firstChange) {
+      this.ngOnInit();
+    }
   }
 }

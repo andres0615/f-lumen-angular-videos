@@ -27,8 +27,10 @@ export class ChannelVideosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadingPageService.setLoading(true);
-    this.getVideos();
+    this.route.parent!.paramMap.subscribe((params: ParamMap) => {
+      this.loadingPageService.setLoading(true);
+      this.getVideos();
+    });
   }
 
   getVideos(): void {
