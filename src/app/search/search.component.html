@@ -1,0 +1,10 @@
+<form id="search-form" (ngSubmit)="search()">
+  <mat-form-field id="search-form-field" appearance="fill">
+    <mat-label>Buscar</mat-label>
+    <input name="username" type="text" [(ngModel)]="keywordSearch" matInput />
+    <button mat-icon-button matSuffix>
+      <mat-icon> search </mat-icon>
+    </button>
+    <mat-error> Por favor ingrese el nombre de usuario </mat-error>
+  </mat-form-field>
+</form>

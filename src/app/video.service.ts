@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Video } from './video';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from, Subject, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -10,6 +10,9 @@ import { environment } from '../environments/environment';
 })
 export class VideoService {
   private videosUrl = environment.apiUrl + '/video'; // URL to web api
+  public keywordSearch: BehaviorSubject<string> = new BehaviorSubject<string>(
+    ''
+  );
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -67,5 +70,13 @@ export class VideoService {
     const url = `${this.videosUrl}/${id}`;
 
     return this.http.delete(url);
+  }
+
+  setKeywordSearch(keyword: string) {
+    this.keywordSearch.next(keyword);
+  }
+
+  getKeywordSearch() {
+    return this.keywordSearch;
   }
 }

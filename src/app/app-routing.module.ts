@@ -13,10 +13,12 @@ import { AdminVideosComponent } from './admin-videos/admin-videos.component';
 import { ChannelVideosComponent } from './channel-videos/channel-videos.component';
 import { VideoEditComponent } from './video-edit/video-edit.component';
 import { VideoUploadComponent } from './video-upload/video-upload.component';
+import { SearchedVideosComponent } from './searched-videos/searched-videos.component';
 
 const routes: Routes = [
   { path: '', component: VideosComponent },
   { path: 'video/:id', component: VideoComponent },
+  { path: 'search', component: SearchedVideosComponent },
   {
     path: 'login',
     component: LoginComponent,

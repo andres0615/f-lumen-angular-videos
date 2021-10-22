@@ -5,3 +5,13 @@
 #username-span {
   margin-right: 0.7em;
 }
+
+mat-toolbar {
+  padding-top: 3em;
+  padding-bottom: 2.5em;
+  font-size: 1em;
+}
+
+#mat-toolbar-layout-row {
+  width: 100%;
+}
