@@ -1,1 +1,12 @@
-<p>searched-videos works!</p>
+<div fxLayout="row" fxLayout.xs="column">
+  <div fxFlex="1 1 8%"></div>
+  <div fxFlex="1 1 84%">
+    <div fxLayout="column">
+      <div fxFlex *ngFor="let video of videos">
+        <app-thumbnail-video-theme-two [video]="video">
+        </app-thumbnail-video-theme-two>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="1 1 8%"></div>
+</div>

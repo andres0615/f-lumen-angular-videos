@@ -22,9 +22,14 @@
           </div>
 
           <div fxFlex>
-            <button mat-raised-button color="primary">
+            <a
+              [routerLink]="['/settings/videos']"
+              *ngIf="authService.isLoggedIn()"
+              mat-raised-button
+              color="primary"
+            >
               ADMINISTRAR VIDEOS
-            </button>
+            </a>
           </div>
         </div>
       </div>

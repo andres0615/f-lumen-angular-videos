@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayout.xs="column" id="layout">
+  <div fxFlex="1 1 30%">
+    <a [routerLink]="['/video/' + video.id]">
+      <img id="thumbnail-img" [src]="video.thumbnail" />
+    </a>
+  </div>
+  <div fxFlex="1 1 70%" id="data-div">
+    <div fxLayout="column">
+      <div fxFlex id="title">
+        <a [routerLink]="['/video/' + video.id]">
+          <h2>{{ video.title }}</h2>
+        </a>
+      </div>
+
+      <div fxFlex id="username-div">
+        <a
+          [routerLink]="['/channel/' + video.user_id + '/videos']"
+          class="username"
+        >
+          {{ video.username }}
+        </a>
+      </div>
+      <div fxFlex>
+        {{ video.description }}
+      </div>
+      <div fxFlex></div>
+    </div>
+  </div>
+</div>

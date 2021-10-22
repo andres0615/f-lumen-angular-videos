@@ -23,7 +23,7 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (!this.authService.refreshTokenExecuted) {
+        /*if (!this.authService.refreshTokenExecuted) {
           this.authService.refreshTokenExecuted = true;
 
           let refreshTime = 10000;
@@ -31,9 +31,7 @@ export class AppComponent {
           setInterval(() => {
             this.authService.refreshToken();
           }, refreshTime);
-        }
-
-        //this.router.navigated = false;
+        }*/
 
         let fullWidth: boolean = false;
 

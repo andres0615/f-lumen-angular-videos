@@ -1,0 +1,30 @@
+#thumbnail-img {
+  width: 100%;
+}
+
+#data-div {
+  padding: 0.5em 1em;
+}
+
+#layout {
+  margin-bottom: 1em;
+}
+
+h2 {
+  margin: 0;
+  color: black;
+  font-weight: 400;
+}
+
+#title a {
+  text-decoration: none;
+}
+
+a.username {
+  text-decoration: none;
+  color: gray;
+}
+
+#username-div {
+  margin-bottom: 1em;
+}

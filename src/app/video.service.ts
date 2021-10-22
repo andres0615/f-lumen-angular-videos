@@ -79,4 +79,10 @@ export class VideoService {
   getKeywordSearch() {
     return this.keywordSearch;
   }
+
+  searchVideos(keyword: string): Observable<Video[]> {
+    return this.http.post<Video[]>(this.videosUrl + '/search', {
+      keyword: keyword,
+    });
+  }
 }

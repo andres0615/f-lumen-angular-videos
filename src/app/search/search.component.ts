@@ -15,7 +15,9 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   search() {
-    this.videoService.setKeywordSearch(this.keywordSearch);
-    this.router.navigate(['search']);
+    if (this.keywordSearch) {
+      this.videoService.setKeywordSearch(this.keywordSearch);
+      this.router.navigate(['search']);
+    }
   }
 }

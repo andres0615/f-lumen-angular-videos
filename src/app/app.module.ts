@@ -44,6 +44,7 @@ import { VideoUploadComponent } from './video-upload/video-upload.component';
 import { UploadingSpinnerComponent } from './uploading-spinner/uploading-spinner.component';
 import { SearchComponent } from './search/search.component';
 import { SearchedVideosComponent } from './searched-videos/searched-videos.component';
+import { ThumbnailVideoThemeTwoComponent } from './thumbnail-video-theme-two/thumbnail-video-theme-two.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { SearchedVideosComponent } from './searched-videos/searched-videos.compo
     UploadingSpinnerComponent,
     SearchComponent,
     SearchedVideosComponent,
+    ThumbnailVideoThemeTwoComponent,
   ],
   imports: [
     BrowserModule,
