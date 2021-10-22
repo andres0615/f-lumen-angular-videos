@@ -24,7 +24,7 @@
           <div fxFlex>
             <a
               [routerLink]="['/settings/videos']"
-              *ngIf="authService.isLoggedIn()"
+              *ngIf="adminVideosButton"
               mat-raised-button
               color="primary"
             >

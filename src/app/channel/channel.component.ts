@@ -19,6 +19,7 @@ export class ChannelComponent implements OnInit {
   activeLink: string = '';
   //links: Array<{link: string, label: string}> = {};
   links: { link: string; label: string }[] = [];
+  public adminVideosButton: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -57,6 +58,14 @@ export class ChannelComponent implements OnInit {
       this.userService.getUser(userId).subscribe((user) => {
         this.user = user;
         this.loadingPageService.setLoading(false);
+
+        if (this.authService.isLoggedIn()) {
+          this.authService.getUser().subscribe((authUser) => {
+            if (authUser.id == user.id) {
+              this.adminVideosButton = true;
+            }
+          });
+        }
       });
     }
   }
