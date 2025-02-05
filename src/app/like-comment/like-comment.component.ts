@@ -42,6 +42,16 @@ export class LikeCommentComponent implements OnInit {
       .getCommentTotalLikes(this.commentId)
       .subscribe((res) => {
         this.commentLikes = res.likes;
+      },
+      (error) => {
+        // on error, repeat the request again after 1 second
+        setTimeout(() => {
+          this.likeCommentService
+          .getCommentTotalLikes(this.commentId)
+          .subscribe((res) => {
+            this.commentLikes = res.likes;
+          });
+        }, 1000);
       });
   }
 
@@ -50,6 +60,16 @@ export class LikeCommentComponent implements OnInit {
       .getCommentTotalDislikes(this.commentId)
       .subscribe((res) => {
         this.commentDislikes = res.dislikes;
+      },
+      (error) => {
+        // on error, repeat the request again after 1 second
+        setTimeout(() => {
+          this.likeCommentService
+            .getCommentTotalDislikes(this.commentId)
+            .subscribe((res) => {
+            this.commentDislikes = res.dislikes;
+          });
+        }, 1000);
       });
   }
 
