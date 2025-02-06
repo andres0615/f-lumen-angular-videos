@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges  } from '@angular/core';
 import { LikeVideo } from '../like-video';
 import { LikeVideoService } from '../like-video.service';
 import { LoadingPageService } from '../loading-page.service';
@@ -35,6 +35,20 @@ export class LikeVideoComponent implements OnInit {
 
     this.getVideoTotalLikes();
     this.getVideoTotalDislikes();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['videoId']) {
+      this.likeVideo = false;
+      this.dislikeVideo = false;
+
+      if (this.authService.isLoggedIn()) {
+        this.getUserLikeVideo();
+      }
+  
+      this.getVideoTotalLikes();
+      this.getVideoTotalDislikes();
+    }
   }
 
   getVideoTotalLikes() {
