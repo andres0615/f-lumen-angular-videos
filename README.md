@@ -6,9 +6,9 @@ Plataforma de videos parecida a youtube, frontend desarrollado con [Angular](htt
 - [Prettier](https://prettier.io/).
 - [Angular Material](https://material.angular.io/).
 
-#### Ver aplicacion en: 
+#### Ver demo de la aplicacion en: 
 
-[https://lumen-angular-videos.herokuapp.com/](https://lumen-angular-videos.herokuapp.com/)
+[https://la-videos.site/](https://la-videos.site/)
 
 #### Repositorio del backend:
 [https://github.com/andres0615/lumen-angular-videos](https://github.com/andres0615/lumen-angular-videos)
