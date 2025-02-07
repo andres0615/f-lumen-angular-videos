@@ -17,6 +17,14 @@ export class TopBarComponent implements OnInit {
     if (this.authService.isLoggedIn()) {
       this.authService.getUser().subscribe((user) => {
         this.authService.setUser(user);
+      },
+      (error) => {
+        // on error, repeat the request again after 1 second
+        setTimeout(() => {
+          this.authService.getUser().subscribe((user) => {
+            this.authService.setUser(user);
+          });
+        }, 1000);
       });
     }
   }
