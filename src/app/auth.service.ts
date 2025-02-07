@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    const token = this.getToken();
+    let token = this.getToken();
 
     if (token) {
       if (this.isTokenExpired() == true) {
@@ -102,7 +102,7 @@ export class AuthService {
     if (localStorage.getItem('access_token')) {
       let access_token = JSON.parse(localStorage.getItem('access_token')!);
 
-      const now = new Date();
+      let now = new Date();
 
       if (now.getTime() >= access_token.expiry) {
         this.deleteSession();

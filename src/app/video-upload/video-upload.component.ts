@@ -61,7 +61,8 @@ export class VideoUploadComponent implements OnInit {
           //this.video = video;
           //this.uploadingVideo = false;
           //console.log('subido ' + resVideo.id);
-          this.router.navigate(['/settings/videos/edit/' + resVideo.id]);
+          // this.router.navigate(['/settings/videos/edit/' + resVideo.id]);
+          this.router.navigate(['/settings/videos']);
         });
     }
   }
