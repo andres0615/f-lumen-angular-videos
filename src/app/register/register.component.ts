@@ -73,4 +73,14 @@ export class RegisterComponent implements OnInit {
         // this.router.navigate(['/']);
       });
   }
+
+  turnHidePassword(event: Event): void {
+    event.preventDefault();
+    this.hidePassword = !this.hidePassword;
+  }
+
+  turnHideConfirmPassword(event: Event): void {
+    event.preventDefault();
+    this.hideConfirmPassword = !this.hideConfirmPassword;
+  }
 }
