@@ -30,22 +30,41 @@ export class LoadingPageService {
       setTimeout(() => {
         this.loading = true;
       });
-    } else if (loading === false) {
-      // Cuando algun componente indica que termino de cargarse.
 
-      /* Se elimina un item de loadingComponents para indicar que uno de 
-      los componentes que se estaban cargando ya termino de cargarse. */
+      // Se establece un limite de tiempo de 1 segundo para mostrar la barra de carga
+      setTimeout(() => {
+        /* Se elimina un item de loadingComponents para indicar que uno de 
+        los componentes que se estaban cargando ya termino de cargarse. */
 
-      this.loadingComponents.pop();
+        this.loadingComponents.pop();
 
-      /* Si ya no hay ningun componente cargandose se 
-        desactiva la barra de carga */
+        /* Si ya no hay ningun componente cargandose se 
+          desactiva la barra de carga */
 
-      if (this.loadingComponents.length === 0) {
-        setTimeout(() => {
-          this.loading = false;
-        });
-      }
+        if (this.loadingComponents.length === 0) {
+          setTimeout(() => {
+            this.loading = false;
+          });
+        }
+      },1000);
     }
+
+    // } else if (loading === false) {
+    //   // Cuando algun componente indica que termino de cargarse.
+
+    //   /* Se elimina un item de loadingComponents para indicar que uno de 
+    //   los componentes que se estaban cargando ya termino de cargarse. */
+
+    //   this.loadingComponents.pop();
+
+    //   /* Si ya no hay ningun componente cargandose se 
+    //     desactiva la barra de carga */
+
+    //   if (this.loadingComponents.length === 0) {
+    //     setTimeout(() => {
+    //       this.loading = false;
+    //     });
+    //   }
+    // }
   }
 }
