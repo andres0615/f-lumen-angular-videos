@@ -48,6 +48,16 @@
         <mat-icon>account_circle</mat-icon>
         Entrar
       </button>
+      &nbsp;
+      &nbsp;
+      <button
+        *ngIf="!authService.isLoggedIn()"
+        [routerLink]="['/register']"
+        mat-raised-button
+        color="primary"
+      >
+        Registrate
+      </button>
     </div>
   </div>
 </mat-toolbar>
