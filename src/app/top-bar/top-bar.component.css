@@ -15,3 +15,10 @@ mat-toolbar {
 #mat-toolbar-layout-row {
   width: 100%;
 }
+
+
+@media (max-width: 768px) { /* Ajusta el tamaño según necesites */
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
