@@ -16,9 +16,16 @@ mat-toolbar {
   width: 100%;
 }
 
+.show-on-mobile {
+  display: none;
+}
 
 @media (max-width: 768px) { /* Ajusta el tamaño según necesites */
   .hide-on-mobile {
     display: none !important;
+  }
+
+  .show-on-mobile {
+    display: block !important;
   }
 }

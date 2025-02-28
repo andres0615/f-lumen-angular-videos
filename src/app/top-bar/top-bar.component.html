@@ -11,6 +11,7 @@
     <div fxFlex style="display: flex">
       <span class="example-spacer"></span>
 
+      <!-- logged user menu -->
       <div *ngIf="authService.isLoggedIn()">
         <button
           mat-button
@@ -39,26 +40,54 @@
         </mat-menu>
       </div>
 
-      <button
-        *ngIf="!authService.isLoggedIn()"
-        [routerLink]="['/login']"
-        mat-raised-button
-        color="primary"
-      >
-        <mat-icon>account_circle</mat-icon>
-        Entrar
-      </button>
-      &nbsp;
-      &nbsp;
-      <button
-        *ngIf="!authService.isLoggedIn()"
-        [routerLink]="['/register']"
-        mat-raised-button
-        color="primary"
-        class="hide-on-mobile"
-      >
-        Registrate
-      </button>
+      <!-- login menu normal -->
+      <div class="hide-on-mobile" 
+      *ngIf="!authService.isLoggedIn()" >
+        <button
+          [routerLink]="['/login']"
+          mat-raised-button
+          color="primary"
+        >
+          <mat-icon>account_circle</mat-icon>
+          Entrar
+        </button>
+        &nbsp;
+        <button
+          [routerLink]="['/register']"
+          mat-raised-button
+          color="primary"
+          class="hide-on-mobile"
+        >
+          Registrate
+        </button>
+      </div>
+
+      <!-- login menu para dispositivos moviles -->
+      <div class="show-on-mobile" 
+      *ngIf="!authService.isLoggedIn()" >
+        <button
+          mat-button
+          [matMenuTriggerFor]="loginMenu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #loginMenu="matMenu">
+          <button
+            [routerLink]="['/login']"
+            mat-menu-item
+          >
+            <span>Entrar</span>
+          </button>
+          <button
+            [routerLink]="['/register']"
+            mat-menu-item
+          >
+            <span>Registrate</span>
+          </button>
+        </mat-menu>
+      </div>
+      
     </div>
   </div>
 </mat-toolbar>
