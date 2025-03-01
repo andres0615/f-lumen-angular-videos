@@ -24,7 +24,12 @@ export class VideoService {
   constructor(private http: HttpClient) {}
 
   getVideos(skipVideoId?: number): Observable<Video[]> {
-    let url = this.videosUrl + '?skipVideoId' + skipVideoId;
+    let url = this.videosUrl;
+
+    if(skipVideoId != undefined){
+      url += '?skipVideoId=' + skipVideoId;
+    }
+
     return this.http.get<Video[]>(url);
   }
 

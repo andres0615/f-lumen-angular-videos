@@ -25,7 +25,7 @@ export class RelatedVideosComponent implements OnInit {
   }
 
   getVideos(): void {
-    this.videoService.getVideos().subscribe((videos: Video[]) => {
+    this.videoService.getVideos(this.videoId).subscribe((videos: Video[]) => {
       this.videos = videos;
       this.loadingPageService.setLoading(false);
     });
