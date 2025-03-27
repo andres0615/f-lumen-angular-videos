@@ -16,3 +16,7 @@
   padding: 0 0.5em;
   padding-bottom: 1em;
 }
+
+.videos-component-video div:first-of-type img {
+  border-radius: 8px;
+}

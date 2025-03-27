@@ -1,5 +1,6 @@
 #video-component-video {
   width: 100%;
+  border-radius: 15px;
 }
 
 #video-component > .child-1 {
