@@ -45,6 +45,7 @@ import { UploadingSpinnerComponent } from './uploading-spinner/uploading-spinner
 import { SearchComponent } from './search/search.component';
 import { SearchedVideosComponent } from './searched-videos/searched-videos.component';
 import { ThumbnailVideoThemeTwoComponent } from './thumbnail-video-theme-two/thumbnail-video-theme-two.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { ThumbnailVideoThemeTwoComponent } from './thumbnail-video-theme-two/thu
     MatTableModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [
     {

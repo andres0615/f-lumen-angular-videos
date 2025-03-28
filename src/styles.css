@@ -3,8 +3,18 @@
 html,
 body {
   height: 100%;
+  font-size: 15.5px;
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* font-size: 14px; */
+}
+
+.mat-typography, .mat-body, .mat-body1 {
+  font-size: 1rem;
+}
+
+.mat-card, .mat-card-content {
+  font-size: 1rem;
 }

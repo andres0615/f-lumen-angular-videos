@@ -59,3 +59,64 @@
   </div>
   <div fxFlex="1 1 35%"></div>
 </div>
+<!-- <br>
+<hr>
+<br> -->
+
+<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" *ngIf="false">
+  <div fxFlex="1 1 35%"></div>
+  <div fxFlex="1 1 30%">
+    <mat-card>
+      <mat-card-title>Entrar</mat-card-title>
+      <mat-card-content fxLayout="column">
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" fxLayout="column" fxFlex>
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Username</mat-label>
+            <input
+              formControlName="username"
+              name="username"
+              type="text"
+              matInput
+            />
+            <mat-error *ngIf="loginForm.controls.username.errors?.required">
+              Por favor ingrese el nombre de usuario
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Password</mat-label>
+            <input
+              formControlName="password"
+              name="password"
+              type="password"
+              matInput
+            />
+            <mat-error *ngIf="loginForm.controls.password.errors?.required">
+              Por favor ingrese el password
+            </mat-error>
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            id="login-button"
+            type="submit"
+            color="primary"
+            fxFlex
+          >
+            Entrar
+          </button>
+        </form>
+        <div fxFlex>Si aun no tienes una cuenta.</div>
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/register']"
+          href=""
+          fxFlex
+          >Registrate</a
+        >
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="1 1 35%"></div>
+</div>
