@@ -1,4 +1,4 @@
-<mat-toolbar class="mat-app-background">
+<mat-toolbar color="primary" >
   <div fxLayout="row" id="mat-toolbar-layout-row" fxLayoutAlign="none center">
     <div fxFlex>
       <a mat-button [routerLink]="['/']"> Inicio </a>
@@ -46,7 +46,7 @@
         <button
           [routerLink]="['/login']"
           mat-raised-button
-          color="primary"
+          color="warn"
         >
           <mat-icon>account_circle</mat-icon>
           Entrar
@@ -55,7 +55,7 @@
         <button
           [routerLink]="['/register']"
           mat-raised-button
-          color="primary"
+          color="warn"
           class="hide-on-mobile"
         >
           Registrate
