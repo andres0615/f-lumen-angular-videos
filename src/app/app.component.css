@@ -1,3 +1,7 @@
 #top-bar-spacer {
   margin-bottom: 1em;
 }
+
+.container {
+  min-height: 100%;
+}
