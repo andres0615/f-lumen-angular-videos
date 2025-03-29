@@ -46,6 +46,7 @@ import { SearchComponent } from './search/search.component';
 import { SearchedVideosComponent } from './searched-videos/searched-videos.component';
 import { ThumbnailVideoThemeTwoComponent } from './thumbnail-video-theme-two/thumbnail-video-theme-two.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonToggleModule
   ],
   providers: [
     {
