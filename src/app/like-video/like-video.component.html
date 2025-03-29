@@ -1,18 +1,44 @@
-<div fxLayout="row" fxLayoutAlign="none center" id="like-video-content">
-  <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
+<div fxLayout="row" fxLayoutAlign="none center" id="like-video-content" >
+  <!-- <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
     <button (click)="likeClick()" mat-icon-button>
       <mat-icon>
         {{ likeVideo === true ? "thumb_up_alt" : "thumb_up_off_alt" }}
       </mat-icon>
     </button>
   </div>
-  <div fxFlex="1 1 20%">{{ videoLikes }}</div>
-  <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
+  <div fxFlex="1 1 20%">{{ videoLikes }}</div> -->
+  <!-- <button mat-flat-button color="accent"
+  fxFlex="1 1 35%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%" 
+  (click)="likeClick()" id="video-like-button" >
+    <mat-icon>
+      {{ likeVideo === true ? "thumb_up_alt" : "thumb_up_off_alt" }}
+    </mat-icon>
+    &nbsp;
+    {{ videoLikes }}
+  </button> -->
+  <!-- <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
     <button (click)="dislikeClick()" mat-icon-button>
       <mat-icon>
         {{ dislikeVideo === true ? "thumb_down_alt" : "thumb_down_off_alt" }}
       </mat-icon>
     </button>
   </div>
-  <div fxFlex="1 1 20%">{{ videoDislikes }}</div>
+  <div fxFlex="1 1 20%">{{ videoDislikes }}</div> -->
+  <!-- &nbsp;
+  &nbsp; -->
+  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color"
+  id="button-group" >
+    <mat-button-toggle value="red" id="video-like-button" >
+      <mat-icon>
+        {{ likeVideo === true ? "thumb_up_alt" : "thumb_up_off_alt" }}
+      </mat-icon>
+      &nbsp;{{ videoLikes }}
+    </mat-button-toggle>
+    <mat-button-toggle value="green" id="video-dislike-button">
+      <mat-icon>
+        {{ dislikeVideo === true ? "thumb_down_alt" : "thumb_down_off_alt" }}
+      </mat-icon>
+      &nbsp;{{ videoDislikes }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
 </div>

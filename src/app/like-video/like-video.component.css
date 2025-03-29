@@ -1,3 +1,37 @@
 #like-video-content > div {
   text-align: center;
 }
+
+#button-group {
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  /* height: 2rem; */
+}
+
+/* #like-video-content .mat-button-toggle-label-content {
+  line-height: 0 !important;
+} */
+
+::ng-deep #like-video-content .mat-button-toggle-label-content {
+  line-height: 0;
+}
+
+::ng-deep #like-video-content .mat-button-toggle-label-content .material-icons {
+  font-size: 22px;
+}
+
+::ng-deep #like-video-content #video-like-button .mat-button-toggle-label-content {
+  padding-top: .45rem;
+  padding-bottom: .2rem;
+  padding-left: .6rem;
+  padding-right: .8rem;
+}
+
+::ng-deep #like-video-content #video-dislike-button .mat-button-toggle-label-content {
+  padding-top: .45rem;
+  padding-bottom: .2rem;
+  padding-left: .8rem;
+  padding-right: .6rem;
+}
