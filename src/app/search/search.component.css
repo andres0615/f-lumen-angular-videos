@@ -6,3 +6,7 @@
 #search-form {
   width: 95%;
 }
+
+::ng-deep #search-form .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(0, 0, 0, .12);
+}
