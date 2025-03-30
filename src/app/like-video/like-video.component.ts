@@ -13,12 +13,23 @@ import { AuthService } from '../auth.service';
 export class LikeVideoComponent implements OnInit {
   @Input() videoId: number = 0;
   @Input() userId: number = 0;
+  /* #region new design */
+
+
+
+  /* #endregion  */
 
   public videoLikes: number = 0;
   public videoDislikes: number = 0;
   public likeVideo: boolean = false;
   public dislikeVideo: boolean = false;
   public userLikeVideo = {} as LikeVideo;
+
+  /* #region new design */
+
+  
+
+  /* #endregion  */
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +38,12 @@ export class LikeVideoComponent implements OnInit {
     public loadingPageService: LoadingPageService,
     public authService: AuthService
   ) {}
+
+  /* #region new design */
+
+
+
+  /* #endregion  */
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
