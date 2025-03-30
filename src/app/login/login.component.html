@@ -81,7 +81,7 @@
       <p class="login-subtitle">Ingresa tus credenciales para continuar</p>
     </div>
 
-    <form [formGroup]="loginForm" class="login-form" fxLayout="column">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form" fxLayout="column">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Correo electrónico</mat-label>
         <input matInput formControlName="email" type="email" placeholder="ejemplo@correo.com">
@@ -96,10 +96,10 @@
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Contraseña</mat-label>
-        <input matInput formControlName="password" placeholder="Ingresa tu contraseña">
+        <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" placeholder="Ingresa tu contraseña">
         <mat-icon matPrefix>vpn_key</mat-icon>
-        <button mat-icon-button matSuffix type="button" [attr.aria-label]="'Mostrar contraseña'" >
-          <mat-icon>visibility_off</mat-icon>
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button" [attr.aria-label]="'Mostrar contraseña'" [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
         <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
           La contraseña es obligatoria
@@ -121,9 +121,9 @@
 
       <!-- <div class="separator">
         <span class="separator-text">o continúa con</span>
-      </div>
+      </div> -->
 
-      <div class="social-login" fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px">
+      <!-- <div class="social-login" fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px">
         <button mat-stroked-button type="button" class="social-button google" fxFlex>
           <img src="assets/icons/google.svg" alt="Google" class="social-icon">
           Google
