@@ -4,12 +4,13 @@
   color="warn"
 ></mat-progress-bar>
 <app-top-bar></app-top-bar>
-<div id="top-bar-spacer" *ngIf="topBarSpacer"></div>
 
 <div class="container mat-app-background">
+
   <div class="flex-container" fxLayout="{{ layoutAlign }}">
     <div class="child-1" fxFlex="1 1 2%"></div>
     <div class="child-2" fxFlex="1 1 96%">
+      <div id="top-bar-spacer" *ngIf="topBarSpacer"></div>
       <router-outlet></router-outlet>
     </div>
     <div class="child-3" fxFlex="1 1 2%"></div>
