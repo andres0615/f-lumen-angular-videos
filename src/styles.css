@@ -18,3 +18,11 @@ body {
 .mat-card, .mat-card-content {
   font-size: 1rem;
 }
+
+.mat-button {
+  font-size: .93rem;
+}
+
+.mat-raised-button {
+  font-size: .93rem;
+}
