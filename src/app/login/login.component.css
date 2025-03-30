@@ -19,3 +19,209 @@
 .bordered {
   border: 1px solid black;
 }
+
+/* #region Nuevo login */
+.login-container {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out;
+  border: none;
+}
+
+.login-header {
+  text-align: center;
+  padding: 30px 20px 10px;
+  background: linear-gradient(to right, #5e35b1, #3949ab);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.login-title {
+  margin: 10px 0 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.login-subtitle {
+  margin: 10px 0 20px;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo-icon {
+  color: #5e35b1;
+  font-size: 2.25rem;
+  width: 36px;
+  height: 36px;
+}
+
+.login-form {
+  padding: 30px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-options {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.forgot-password {
+  color: #5e35b1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s;
+  margin-left: 5px;
+}
+
+.forgot-password:hover {
+  color: #3949ab;
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:not([disabled]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-button mat-icon {
+  margin-right: 8px;
+}
+
+.separator {
+  position: relative;
+  text-align: center;
+  margin: 25px 0;
+  width: 100%;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.separator-text {
+  position: relative;
+  background-color: white;
+  padding: 0 15px;
+  color: #757575;
+  font-size: 0.875rem;
+}
+
+.social-login {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 15px;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.social-button:hover {
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.google {
+  border-color: #db4437;
+  color: #db4437;
+}
+
+.google:hover {
+  background-color: rgba(219, 68, 55, 0.05);
+}
+
+.microsoft {
+  border-color: #0078d4;
+  color: #0078d4;
+}
+
+.microsoft:hover {
+  background-color: rgba(0, 120, 212, 0.05);
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: #757575;
+  width: 100%;
+}
+
+.register-link a {
+  color: #5e35b1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  margin-left: 5px;
+}
+
+.register-link a:hover {
+  color: #3949ab;
+  text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* #endregion */
+
+
+
+
