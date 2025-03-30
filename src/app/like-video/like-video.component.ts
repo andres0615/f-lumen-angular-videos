@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, SimpleChanges  } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter  } from '@angular/core';
 import { LikeVideo } from '../like-video';
 import { LikeVideoService } from '../like-video.service';
 import { LoadingPageService } from '../loading-page.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-like-video',
@@ -15,7 +16,12 @@ export class LikeVideoComponent implements OnInit {
   @Input() userId: number = 0;
   /* #region new design */
 
-
+  @Input() likeCount: number = 0;
+  @Input() dislikeCount: number = 0;
+  @Input() initialReaction: 'like' | 'dislike' | null = null;
+  
+  @Output() likeChanged = new EventEmitter<boolean>();
+  @Output() dislikeChanged = new EventEmitter<boolean>();
 
   /* #endregion  */
 
@@ -27,7 +33,8 @@ export class LikeVideoComponent implements OnInit {
 
   /* #region new design */
 
-  
+  public isLiked: boolean = false;
+  public isDisliked: boolean = false;
 
   /* #endregion  */
 
@@ -41,7 +48,9 @@ export class LikeVideoComponent implements OnInit {
 
   /* #region new design */
 
+  onLikeChange(event: MatButtonToggleChange): void {}
 
+  onDislikeChange(event: MatButtonToggleChange): void {}
 
   /* #endregion  */
 
