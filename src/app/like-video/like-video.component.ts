@@ -98,7 +98,7 @@ export class LikeVideoComponent implements OnInit {
         console.log(likeVideo);
         this.userLikeVideo = likeVideo;
 
-        //console.log(this.userLikeVideo.type);
+        // console.log(this.userLikeVideo.type);
 
         if (this.userLikeVideo.type != undefined) {
           if (this.userLikeVideo.type == true) {
