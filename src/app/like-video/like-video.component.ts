@@ -16,13 +16,6 @@ export class LikeVideoComponent implements OnInit {
   @Input() userId: number = 0;
   /* #region new design */
 
-  @Input() likeCount: number = 0;
-  @Input() dislikeCount: number = 0;
-  @Input() initialReaction: 'like' | 'dislike' | null = null;
-  
-  @Output() likeChanged = new EventEmitter<boolean>();
-  @Output() dislikeChanged = new EventEmitter<boolean>();
-
   /* #endregion  */
 
   public videoLikes: number = 0;
@@ -32,9 +25,6 @@ export class LikeVideoComponent implements OnInit {
   public userLikeVideo = {} as LikeVideo;
 
   /* #region new design */
-
-  public isLiked: boolean = false;
-  public isDisliked: boolean = false;
 
   /* #endregion  */
 
@@ -47,10 +37,6 @@ export class LikeVideoComponent implements OnInit {
   ) {}
 
   /* #region new design */
-
-  onLikeChange(event: MatButtonToggleChange): void {}
-
-  onDislikeChange(event: MatButtonToggleChange): void {}
 
   /* #endregion  */
 

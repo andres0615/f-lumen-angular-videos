@@ -1,4 +1,4 @@
-#like-video-content > div {
+#like-video-content {
   text-align: center;
 }
 
@@ -39,7 +39,7 @@
 /* #region new design */
 
 .video-reaction-container {
-  display: flex;
+  /* display: flex; */
   justify-content: flex-start;
   margin: 16px 0;
 }
@@ -55,7 +55,7 @@
   border: none;
   background-color: transparent;
   transition: all 0.2s ease;
-  min-width: 80px;
+  /* min-width: 80px; */
   padding: 4px 12px;
 }
 
