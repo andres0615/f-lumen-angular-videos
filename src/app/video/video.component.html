@@ -21,9 +21,9 @@
 
       <div class="meta-data-div" fxFlex>
         <div fxLayout="row" fxLayoutAlign="none center">
-          <div fxFlex="1 1 30%">
+          <!-- <div fxFlex="1 1 30%">
             {{ video.created_at | date }}
-          </div>
+          </div> -->
           <div fxFlex="1 1 27%" fxFlex.xs="1 1 35%">
             <app-like-video
               *ngIf="video.id && user.id && authService.isLoggedIn()"
@@ -55,8 +55,11 @@
       </div>
 
       <div class="description-div" fxFlex>
-        <div fxLayout="row">
-          <div fxFlex="1 1 8%"></div>
+        <div fxLayout="column">
+          <!-- <div fxFlex="1 1 8%"></div> -->
+          <div fxFlex>
+            {{ video.created_at | date }}
+          </div>
           <div fxFlex>
             <p>{{ video.description }}</p>
           </div>
