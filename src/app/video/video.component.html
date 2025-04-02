@@ -29,7 +29,7 @@
                 </a>
               </div>
               <div fxFlex>
-                <a [routerLink]="['/channel/' + video.user_id + '/videos']">{{
+                <a [routerLink]="['/channel/' + video.user_id + '/videos']" class="user-link">{{
                   video.username
                 }}</a>
               </div>
@@ -48,21 +48,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="user-div" fxFlex>
-        <div fxLayout="row" class="user-div">
-          <div class="user-photo-div" fxFlex="8%">
-            <a [routerLink]="['/channel/' + video.user_id + '/videos']">
-              <img src="{{ video.user_photo }}" />
-            </a>
-          </div>
-          <div fxFlex>
-            <a [routerLink]="['/channel/' + video.user_id + '/videos']">{{
-              video.username
-            }}</a>
-          </div>
-        </div>
-      </div> -->
 
       <div class="description-div" fxFlex>
         <div fxLayout="column">

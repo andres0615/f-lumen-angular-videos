@@ -32,8 +32,13 @@
 
 .user-photo-div img {
   width: 100%;
+  border-radius: 50%;
 }
 
 .meta-data-div > div > div:has(.user-div) {
   /* align-items: center; */
+}
+
+.user-link{
+  margin-left: 5px;
 }
