@@ -20,11 +20,22 @@
       </div>
 
       <div class="meta-data-div" fxFlex>
-        <div fxLayout="row" fxLayoutAlign="none center">
-          <!-- <div fxFlex="1 1 30%">
-            {{ video.created_at | date }}
-          </div> -->
-          <div fxFlex="1 1 27%" fxFlex.xs="1 1 35%">
+        <div fxLayout="row" >
+          <div fxFlex="30%" fxLayoutAlign="none top">
+            <div fxLayout="row" class="user-div">
+              <div class="user-photo-div" fxFlex="45px">
+                <a [routerLink]="['/channel/' + video.user_id + '/videos']">
+                  <img src="{{ video.user_photo }}" />
+                </a>
+              </div>
+              <div fxFlex>
+                <a [routerLink]="['/channel/' + video.user_id + '/videos']">{{
+                  video.username
+                }}</a>
+              </div>
+            </div>
+          </div>
+          <div fxFlex="27%" fxFlex.xs="1 1 35%">
             <app-like-video
               *ngIf="video.id && user.id && authService.isLoggedIn()"
               [videoId]="video.id"
@@ -38,9 +49,9 @@
         </div>
       </div>
 
-      <div class="user-div" fxFlex>
-        <div fxLayout="row">
-          <div class="user-photo-div" fxFlex="1 1 8%">
+      <!-- <div class="user-div" fxFlex>
+        <div fxLayout="row" class="user-div">
+          <div class="user-photo-div" fxFlex="8%">
             <a [routerLink]="['/channel/' + video.user_id + '/videos']">
               <img src="{{ video.user_photo }}" />
             </a>
@@ -50,13 +61,11 @@
               video.username
             }}</a>
           </div>
-          <div fxFlex></div>
         </div>
-      </div>
+      </div> -->
 
       <div class="description-div" fxFlex>
         <div fxLayout="column">
-          <!-- <div fxFlex="1 1 8%"></div> -->
           <div fxFlex>
             {{ video.created_at | date }}
           </div>

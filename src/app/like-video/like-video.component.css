@@ -41,7 +41,7 @@
 .video-reaction-container {
   /* display: flex; */
   justify-content: flex-start;
-  margin: 16px 0;
+  /* margin: 16px 0; */
 }
 
 .reaction-toggle-group {
