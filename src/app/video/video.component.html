@@ -49,53 +49,6 @@
         </div>
       </div>
 
-      <!-- <div class="description-div" fxFlex>
-        <div fxLayout="column">
-          <div fxFlex>
-            {{ video.created_at | date }}
-          </div>
-          <div fxFlex>
-            <p>{{ video.description }}</p>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- #region new design 1 -->
-
-      <!-- <div class="video-description-card mat-elevation-z1" fxFlex>
-        <div fxLayout="column" fxLayoutGap="12px">
-          <div class="metadata" fxLayout="row" fxLayoutAlign="space-between center">
-            <div class="date">
-              <mat-icon class="metadata-icon">calendar_today</mat-icon>
-              {{ video.created_at | date:'mediumDate' }}
-            </div>
-            <div class="views" *ngIf="true">
-              <mat-icon class="metadata-icon">visibility</mat-icon>
-              300
-            </div>
-          </div>
-          <div class="title-container" *ngIf="video.title">
-            <h3 class="title">{{ video.title }}</h3>
-          </div>
-          <div class="description-container">
-            <p class="description">{{ video.description }}</p>
-          </div>
-          <div class="actions" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
-            <button mat-icon-button color="primary" aria-label="Like">
-              <mat-icon>thumb_up</mat-icon>
-            </button>
-            <button mat-icon-button color="primary" aria-label="Share">
-              <mat-icon>share</mat-icon>
-            </button>
-            <button mat-icon-button color="primary" aria-label="Save to playlist">
-              <mat-icon>playlist_add</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- #endregion -->
-
       <!-- #region new design 2 -->
 
       <div class="video-description-card" fxFlex>
@@ -127,13 +80,7 @@
       </div>
 
       <!-- #endregion -->
-
-      <!-- #region new design 3 -->
-
-
-
-      <!-- #endregion -->
-      
+       
       <div class="comments-div" fxFlex>
         <app-comments
           [userId]="user.id"
