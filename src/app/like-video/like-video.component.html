@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="none center" id="like-video-content" >
+<!-- <div fxLayout="row" fxLayoutAlign="none center" id="like-video-content" > -->
   <!-- <div fxFlex="1 1 15%" fxFlex.sm="1 1 25%" fxFlex.xs="1 1 25%">
     <button (click)="likeClick()" mat-icon-button>
       <mat-icon>
@@ -26,8 +26,11 @@
   <div fxFlex="1 1 20%">{{ videoDislikes }}</div> -->
   <!-- &nbsp;
   &nbsp; -->
+
+  <!-- #region Design 2 -->
+
   <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color"
-  id="button-group" >
+  id="button-group" *ngIf="false" >
     <mat-button-toggle value="red" id="video-like-button" >
       <mat-icon>
         {{ likeVideo === true ? "thumb_up_alt" : "thumb_up_off_alt" }}
@@ -41,4 +44,27 @@
       &nbsp;{{ videoDislikes }}
     </mat-button-toggle>
   </mat-button-toggle-group>
-</div>
+
+   <!-- #endregion  -->
+
+   <!-- #region new design -->
+
+  <div class="video-reaction-container"  id="like-video-content" fxLayoutAlign="none top">
+    <mat-button-toggle-group name="videoReaction" aria-label="Video Reaction" 
+      [multiple]="false" class="reaction-toggle-group">
+      <mat-button-toggle value="like" class="like-button" 
+        [class.active]="likeVideo" (change)="likeClick()" [checked]="likeVideo" >
+        <mat-icon>thumb_up</mat-icon>
+        <span class="reaction-count">{{videoLikes}}</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="dislike" class="dislike-button" 
+        [class.active]="dislikeVideo" (change)="dislikeClick()" [checked]="dislikeVideo">
+        <mat-icon>thumb_down</mat-icon>
+        <span class="reaction-count">{{videoDislikes}}</span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+   <!-- #endregion  -->
+
+<!-- </div> -->

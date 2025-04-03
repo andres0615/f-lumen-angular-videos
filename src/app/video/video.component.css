@@ -32,4 +32,186 @@
 
 .user-photo-div img {
   width: 100%;
+  border-radius: 50%;
 }
+
+.meta-data-div > div > div:has(.user-div) {
+  /* align-items: center; */
+}
+
+.user-link{
+  margin-left: 5px;
+}
+
+/* .video-description-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  border: 1px solid #f0f0f0;
+}
+
+.video-description-card:hover {
+  border-color: #e0e0e0;
+  background-color: #fafafa;
+}
+
+.metadata {
+  color: #757575;
+  font-size: 0.9rem;
+}
+
+.metadata-icon {
+  font-size: 1rem;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.title-container {
+  margin: 8px 0;
+}
+
+.title {
+  margin: 0;
+  color: #424242;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.description-container {
+  padding: 4px 0;
+}
+
+.description {
+  margin: 0;
+  color: #616161;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.actions {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+} */
+
+/* Botones planos sin elevación */
+/* .flat-button {
+  padding: 0 12px;
+  background-color: transparent;
+  box-shadow: none !important;
+  font-weight: 400;
+  color: #5c6bc0;
+  transition: background-color 0.2s ease;
+}
+
+.flat-button:hover {
+  background-color: rgba(92, 107, 192, 0.05);
+}
+
+.action-text {
+  margin-left: 4px;
+  font-size: 0.875rem;
+}
+
+.date, .views {
+  display: flex;
+  align-items: center;
+} */
+
+/* #endregion */
+
+/* #region new design 2 */
+
+.video-description-card {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 7.5px;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+  /* border: 1px solid rgba(0, 0, 0, 0.08); */
+}
+
+.video-description-card:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.metadata {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.9rem;
+}
+
+.metadata-icon {
+  font-size: 1rem;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 4px;
+  vertical-align: middle;
+  /* color: #536dfe; Índigo más vivo */
+}
+
+.title-container {
+  margin: 8px 0;
+}
+
+.title {
+  margin: 0;
+  color: #303f9f; /* Índigo oscuro para el título */
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.description-container {
+  padding: 4px 0;
+}
+
+.description {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85); /* Negro más intenso para mejor legibilidad */
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.actions {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Botones planos sin elevación, pero con colores más vivos */
+.flat-button {
+  padding: 0 12px;
+  background-color: transparent;
+  box-shadow: none !important;
+  font-weight: 400;
+  color: #5c6bc0;
+  transition: background-color 0.2s ease;
+}
+
+.flat-button:hover {
+  background-color: rgba(92, 107, 192, 0.05);
+}
+
+.action-text {
+  margin-left: 4px;
+  font-size: 0.875rem;
+}
+
+.date, .views {
+  display: flex;
+  align-items: center;
+}
+
+.views {
+  /* Índigo más vivo para las vistas */
+  /* color: #536dfe; */
+}
+
+/* #endregion */
+

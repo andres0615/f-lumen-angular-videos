@@ -20,11 +20,22 @@
       </div>
 
       <div class="meta-data-div" fxFlex>
-        <div fxLayout="row" fxLayoutAlign="none center">
-          <div fxFlex="1 1 30%">
-            {{ video.created_at | date }}
+        <div fxLayout="row" >
+          <div fxFlex="30%" fxLayoutAlign="none top">
+            <div fxLayout="row" class="user-div">
+              <div class="user-photo-div" fxFlex="45px">
+                <a [routerLink]="['/channel/' + video.user_id + '/videos']">
+                  <img src="{{ video.user_photo }}" />
+                </a>
+              </div>
+              <div fxFlex>
+                <a [routerLink]="['/channel/' + video.user_id + '/videos']" class="user-link">{{
+                  video.username
+                }}</a>
+              </div>
+            </div>
           </div>
-          <div fxFlex="1 1 27%" fxFlex.xs="1 1 35%">
+          <div fxFlex="27%" fxFlex.xs="1 1 35%">
             <app-like-video
               *ngIf="video.id && user.id && authService.isLoggedIn()"
               [videoId]="video.id"
@@ -38,30 +49,37 @@
         </div>
       </div>
 
-      <div class="user-div" fxFlex>
-        <div fxLayout="row">
-          <div class="user-photo-div" fxFlex="1 1 8%">
-            <a [routerLink]="['/channel/' + video.user_id + '/videos']">
-              <img src="{{ video.user_photo }}" />
-            </a>
+      <!-- #region video description design 2 -->
+
+      <div class="video-description-card" fxFlex>
+        <div fxLayout="column" fxLayoutGap="12px">
+          <div class="metadata" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="date">
+              <mat-icon class="metadata-icon">calendar_today</mat-icon>
+              {{ video.created_at | date:'mediumDate' }}
+            </div>
+            <!-- <div class="views" *ngIf="true">
+              <mat-icon class="metadata-icon">visibility</mat-icon>
+              300
+            </div> -->
           </div>
-          <div fxFlex>
-            <a [routerLink]="['/channel/' + video.user_id + '/videos']">{{
-              video.username
-            }}</a>
+          <div class="description-container">
+            <p class="description">{{ video.description }}</p>
           </div>
-          <div fxFlex></div>
+          <!-- <div class="actions" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+            <button mat-button color="primary" aria-label="Share" class="flat-button">
+              <mat-icon>share</mat-icon>
+              <span class="action-text">Compartir</span>
+            </button>
+            <button mat-button color="primary" aria-label="Save to playlist" class="flat-button">
+              <mat-icon>playlist_add</mat-icon>
+              <span class="action-text">Guardar</span>
+            </button>
+          </div> -->
         </div>
       </div>
 
-      <div class="description-div" fxFlex>
-        <div fxLayout="row">
-          <div fxFlex="1 1 8%"></div>
-          <div fxFlex>
-            <p>{{ video.description }}</p>
-          </div>
-        </div>
-      </div>
+      <!-- #endregion -->
 
       <div class="comments-div" fxFlex>
         <app-comments

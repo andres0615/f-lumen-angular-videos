@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, SimpleChanges  } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter  } from '@angular/core';
 import { LikeVideo } from '../like-video';
 import { LikeVideoService } from '../like-video.service';
 import { LoadingPageService } from '../loading-page.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-like-video',
@@ -13,12 +14,19 @@ import { AuthService } from '../auth.service';
 export class LikeVideoComponent implements OnInit {
   @Input() videoId: number = 0;
   @Input() userId: number = 0;
+  /* #region new design */
+
+  /* #endregion  */
 
   public videoLikes: number = 0;
   public videoDislikes: number = 0;
   public likeVideo: boolean = false;
   public dislikeVideo: boolean = false;
   public userLikeVideo = {} as LikeVideo;
+
+  /* #region new design */
+
+  /* #endregion  */
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +35,10 @@ export class LikeVideoComponent implements OnInit {
     public loadingPageService: LoadingPageService,
     public authService: AuthService
   ) {}
+
+  /* #region new design */
+
+  /* #endregion  */
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
@@ -72,7 +84,7 @@ export class LikeVideoComponent implements OnInit {
         console.log(likeVideo);
         this.userLikeVideo = likeVideo;
 
-        //console.log(this.userLikeVideo.type);
+        // console.log(this.userLikeVideo.type);
 
         if (this.userLikeVideo.type != undefined) {
           if (this.userLikeVideo.type == true) {
