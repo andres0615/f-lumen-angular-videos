@@ -20,6 +20,10 @@
   border: 1px solid black;
 }
 
+.mat-form-field .mat-icon {
+  margin-right: 7px;
+}
+
 /* #region Nuevo login */
 .login-container {
   min-height: 100vh;
