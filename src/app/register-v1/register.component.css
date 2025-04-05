@@ -1,0 +1,17 @@
+#h1-div {
+  text-align: center;
+}
+
+#register-div {
+  padding: 2em 3em;
+  text-align: center;
+  border-radius: 3%;
+}
+
+#register-div mat-form-field {
+  width: 100%;
+}
+
+#register-button {
+  margin-top: 1em;
+}
