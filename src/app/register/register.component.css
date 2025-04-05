@@ -109,3 +109,11 @@
     transform: translateY(0);
   }
 }
+
+/* #region estilos-custom */
+
+.mat-form-field .mat-icon {
+  margin-right: 7px;
+}
+
+/* #endregion estilos-custom */

@@ -10,9 +10,9 @@
       <p class="signup-subtitle">Completa tus datos para registrarte</p>
     </div>
 
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form" fxLayout="column">
+    <form [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)" class="signup-form" fxLayout="column">
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Nombre de usuario</mat-label>
+        <mat-label>Username</mat-label>
         <input matInput formControlName="username" type="text" />
         <mat-icon matPrefix>account_circle</mat-icon>
         <mat-error *ngIf="signupForm.get('username')?.hasError('required')">
@@ -21,19 +21,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Correo electrónico</mat-label>
-        <input matInput formControlName="email" type="email" />
-        <mat-icon matPrefix>email</mat-icon>
-        <mat-error *ngIf="signupForm.get('email')?.hasError('required')">
-          El correo electrónico es obligatorio
-        </mat-error>
-        <mat-error *ngIf="signupForm.get('email')?.hasError('email')">
-          Ingresa un correo electrónico válido
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Contraseña</mat-label>
+        <mat-label>Password</mat-label>
         <input 
           matInput 
           formControlName="password" 
@@ -54,13 +42,10 @@
         <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
           La contraseña es obligatoria
         </mat-error>
-        <mat-error *ngIf="signupForm.get('password')?.hasError('minlength')">
-          La contraseña debe tener al menos 6 caracteres
-        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Confirmar contraseña</mat-label>
+        <mat-label>Confirmar Password</mat-label>
         <input 
           matInput 
           formControlName="confirmPassword" 
@@ -86,7 +71,7 @@
         </mat-error>
       </mat-form-field>
 
-      <button mat-flat-button color="primary" type="submit" class="signup-button" [disabled]="signupForm.invalid">
+      <button mat-flat-button color="primary" type="submit" class="signup-button">
         <mat-icon>how_to_reg</mat-icon>
         Crear Cuenta
       </button>
