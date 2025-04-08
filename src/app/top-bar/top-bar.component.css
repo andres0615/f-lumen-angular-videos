@@ -20,6 +20,14 @@ mat-toolbar {
   display: none;
 }
 
+/* .toolbar-button-1 {
+  font-size: .9rem;
+} */
+
+.mat-button-base {
+  font-size: .93rem;
+}
+
 @media (max-width: 768px) { /* Ajusta el tamaño según necesites */
   .hide-on-mobile {
     display: none !important;

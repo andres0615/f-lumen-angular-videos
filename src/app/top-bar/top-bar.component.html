@@ -1,7 +1,9 @@
 <mat-toolbar color="primary" >
   <div fxLayout="row" id="mat-toolbar-layout-row" fxLayoutAlign="none center">
-    <div fxFlex>
-      <a mat-button [routerLink]="['/']"> Inicio </a>
+    <div fxFlex >
+      <button [routerLink]="['/']" mat-button class="toolbar-button-1" >
+        <mat-icon>video_library</mat-icon>&nbsp;&nbsp;LA Videos
+      </button>
     </div>
 
     <div fxFlex fxFlex.xs="1 1 50%">
