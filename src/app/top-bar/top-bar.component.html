@@ -1,17 +1,27 @@
 <mat-toolbar color="primary" >
   <div fxLayout="row" id="mat-toolbar-layout-row" fxLayoutAlign="none center">
-    <div fxFlex >
-      <button [routerLink]="['/']" mat-button class="toolbar-button-1" >
+    <div fxFlex fxFlex.xs="150px" >
+      <!-- <button [routerLink]="['/']" mat-button class="toolbar-button-1" >
         <mat-icon>video_library</mat-icon>&nbsp;&nbsp;LA Videos
+      </button> -->
+      <!-- #region Home button design -->
+      <button [routerLink]="['/']" mat-button class="home-button">
+        <div class="home-button-content">
+          <div class="icon-container">
+            <mat-icon>video_library</mat-icon>
+          </div>
+          <span class="button-text">LA Videos</span>
+        </div>
       </button>
+      <!-- #endregion Home button design -->
     </div>
 
     <div fxFlex fxFlex.xs="1 1 50%">
       <app-search></app-search>
     </div>
 
-    <div fxFlex style="display: flex">
-      <span class="example-spacer"></span>
+    <div fxFlex style="display: flex" fxLayout="row" fxLayoutAlign="end none">
+      <!-- <span class="example-spacer"></span> -->
 
       <!-- logged user menu -->
       <div *ngIf="authService.isLoggedIn()">
@@ -44,7 +54,7 @@
 
       <!-- login menu normal -->
       <div class="hide-on-mobile" 
-      *ngIf="!authService.isLoggedIn()" >
+      *ngIf="!authService.isLoggedIn()" f >
         <button
           [routerLink]="['/login']"
           mat-raised-button
