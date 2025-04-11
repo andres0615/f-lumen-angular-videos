@@ -1,11 +1,9 @@
 <div
   *ngFor="let row of rowsVideos"
   class="flex-container"
-  fxLayout="row"
-  fxLayout.xs="column"
-  fxLayout.sm="column"
+  fxLayout="row wrap"
 >
-  <div *ngFor="let video of row" class="videos-component-video" fxFlex>
+  <div *ngFor="let video of row" class="videos-component-video" fxFlex fxFlex.sm="33%" fxFlex.xs="100%">
     <app-thumbnail-video-theme-one [video]="video">
     </app-thumbnail-video-theme-one>
   </div>
