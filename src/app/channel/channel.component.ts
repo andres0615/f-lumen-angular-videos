@@ -47,6 +47,9 @@ export class ChannelComponent implements OnInit {
 
       this.links = tabRoutes;
 
+      // tab seleccionada por defecto
+      this.activeLink = 'channel/' + this.getUserId() + '/videos';
+
       //this.loadingPageService.setLoading(true);
       //this.getVideos();
     });
