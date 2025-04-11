@@ -15,6 +15,10 @@
   margin-top: 0.8em;
 }
 
+.title-div h1 {
+  font-weight: 450;
+}
+
 .meta-data-div,
 .comments-div {
   margin-bottom: 1em;
@@ -175,7 +179,7 @@
   color: rgba(0, 0, 0, 0.85); /* Negro más intenso para mejor legibilidad */
   line-height: 1.6;
   font-size: 1rem;
-  text-align: justify;
+  text-align: left;
 }
 
 .actions {
