@@ -1,0 +1,48 @@
+<div fxLayout="row">
+  <div class="user-photo-div" fxFlex="50px">
+    <a [routerLink]="['/channel/' + comment.user_id + '/videos']">
+      <img src="{{ comment.user_photo }}" />
+    </a>
+  </div>
+  <div fxFlex id="layout-child-two">
+    <div fxLayout="column">
+      <div class="username-div">
+        <a [routerLink]="['/channel/' + comment.user_id + '/videos']">{{
+          comment.username
+        }}</a>
+        <span class="example-spacer"></span>
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="commentMenu"
+          *ngIf="comment.user_id == userId"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #commentMenu="matMenu">
+          <button (click)="delete()" mat-menu-item>
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar</span>
+          </button>
+        </mat-menu>
+      </div>
+      <div fxFlex id="comment">
+        {{ comment.comment }}
+      </div>
+      <div fxFlex>
+        <div fxLayout="row">
+          <div fxFlex="1 1 27%" fxFlex.sm="1 1 40%" fxFlex.xs="1 1 40%">
+            <app-like-comment
+              [userId]="userId"
+              [commentId]="comment.id"
+              *ngIf="authService.isLoggedIn()"
+            ></app-like-comment>
+            <app-like-comment
+              [commentId]="comment.id"
+              *ngIf="!authService.isLoggedIn()"
+            ></app-like-comment>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
