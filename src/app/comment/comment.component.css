@@ -1,18 +1,21 @@
 .comment-card {
   padding: 1rem;
-  background-color: #fdfdfd;
+  /* background-color: #fdfdfd; */
   border-radius: 0.75rem;
   border: 1px solid #e0e0e0;
-  box-shadow: none;
+  /* box-shadow: none; */
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
+  0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .comment-container {
   display: flex;
 }
 
-.comment-avatar mat-icon {
+.comment-avatar .mat-icon {
   font-size: 3rem;
   color: #b0b0b0;
+  width: 40px;
 }
 
 .comment-content {
@@ -39,7 +42,7 @@
 .comment-text {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 4px;
   line-height: 1.6;
 }
 

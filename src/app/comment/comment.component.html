@@ -24,9 +24,25 @@
       </div>
 
       <!-- Actions -->
-      <div class="comment-actions" fxLayout="row" fxLayoutGap="1rem">
+      <!-- <div class="comment-actions" fxLayout="row" fxLayoutGap="1rem">
         <button mat-button class="comment-button">Like</button>
         <button mat-button class="comment-button">Dislike</button>
+      </div> -->
+
+      <div fxFlex>
+        <div fxLayout="row">
+          <div fxFlex="1 1 27%" fxFlex.sm="1 1 40%" fxFlex.xs="1 1 40%">
+            <app-like-comment
+              [userId]="userId"
+              [commentId]="comment.id"
+              *ngIf="authService.isLoggedIn()"
+            ></app-like-comment>
+            <app-like-comment
+              [commentId]="comment.id"
+              *ngIf="!authService.isLoggedIn()"
+            ></app-like-comment>
+          </div>
+        </div>
       </div>
     </div>
   </div>
