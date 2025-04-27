@@ -1,3 +1,21 @@
 #like-comment-content > div {
   text-align: center;
 }
+
+#like-comment-content {
+  font-size: .99rem;
+}
+
+#like-comment-content .mat-icon {
+  font-size: 23px;
+}
+
+.mat-icon-button {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+}
+
+.comment-reaction-button:hover {
+background-color: #f0f0f0;
+}
