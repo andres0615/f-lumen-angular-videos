@@ -4,6 +4,7 @@
 
 #like-comment-content {
   font-size: .99rem;
+  margin-top: 5px;
 }
 
 #like-comment-content .mat-icon {
@@ -18,4 +19,17 @@
 
 .comment-reaction-button:hover {
 background-color: #f0f0f0;
+}
+
+.comment-reaction-button {
+  color: #616161;
+  transition: color 0.3s ease;
+  background-color: none;
+  transition: background-color 0.2s ease;
+}
+
+div[fxFlex="32px"] {
+  text-align: center;
+  font-weight: 500;
+  color: #424242;
 }
