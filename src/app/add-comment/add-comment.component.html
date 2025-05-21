@@ -15,7 +15,7 @@
     </mat-form-field>
   </div>
   <div fxFlex class="add-comment-div add-comment-button">
-    <button mat-raised-button color="primary" (click)="addComment()">
+    <button mat-raised-button color="primary" (click)="addComment()" [disabled]="!comment.comment">
       Comentar
     </button>
   </div>
