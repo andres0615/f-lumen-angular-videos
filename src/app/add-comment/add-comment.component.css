@@ -6,8 +6,13 @@
   /* margin-bottom: 1em; */
 }
 
-.add-comment-button {
+#add-comment-button {
   text-align: right;
+}
+
+#add-comment-button button:enabled:hover {
+  margin-top: -1px;
+  margin-bottom: 1px;
 }
 
 #add-comment-layout {
