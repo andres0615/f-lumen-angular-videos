@@ -2,25 +2,31 @@
   <div class="comment-container" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="1rem">
     
     <!-- Avatar -->
-    <div class="comment-avatar">
-      <mat-icon>account_circle</mat-icon>
+    <div class="comment-avatar" fxFlex="50px">
+      <!-- <mat-icon>account_circle</mat-icon> -->
+      <a [routerLink]="['/channel/' + comment.user_id + '/videos']">
+        <img src="{{ comment.user_photo }}" />
+      </a>
     </div>
 
     <!-- Main Content -->
     <div class="comment-content" fxFlex>
       <!-- Header -->
       <div class="comment-header" fxLayout="row" fxLayoutAlign="start center">
-        <span class="username">Username</span>
+        <a [routerLink]="['/channel/' + comment.user_id + '/videos']" class="username-link">
+          <span class="username">{{ comment.username }}</span>
+        </a>
+        <!-- <span class="username">Username</span> -->
         <!-- <span class="timestamp">2 hours ago</span> -->
       </div>
       <div class="comment-header" fxLayout="row" fxLayoutAlign="start center">
         <!-- <span class="username">Username</span> -->
-        <span class="timestamp">2 hours ago</span>
+        <span class="timestamp">{{ comment.comment_ago }}</span>
       </div>
 
       <!-- Comment Text -->
       <div class="comment-text">
-        This is an example of a comment styled according to the design guidelines of LA Videos. The layout is clean, minimal, and uses soft tones with proper spacing and flat design principles.
+        {{ comment.comment }}
       </div>
 
       <!-- Actions -->

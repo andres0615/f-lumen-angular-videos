@@ -7,4 +7,5 @@ export interface Comment {
   user_photo: string;
   created_at: string;
   updated_at: string;
+  comment_ago: string;
 }
