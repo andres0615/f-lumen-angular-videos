@@ -54,3 +54,25 @@ Plataforma de videos basada en youtube, frontend desarrollado con [Angular](http
 ![Singup](src/assets/screenshots/singup-2.png)
 
 *Figura 7: Registro de usuario.*
+
+#### Administracion de videos
+
+![Videos subidos](src/assets/screenshots/list-my-videos.png)
+
+*Figura 8: Lista de videos subidos.*
+
+![Subir video](src/assets/screenshots/upload-video.png)
+
+*Figura 9: Seccion para subir video.*
+
+#### Canal de usuario
+
+![Canal de usuario](src/assets/screenshots/my-channel.png)
+
+*Figura 10: Canal de usuario.*
+
+#### Buscador de videos
+
+![buscar video](src/assets/screenshots/search-video.png)
+
+*Figura 11: Resultados de busqueda.*
