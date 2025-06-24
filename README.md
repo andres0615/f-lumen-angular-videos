@@ -21,11 +21,11 @@ Plataforma de videos basada en youtube, frontend desarrollado con [Angular](http
 
 ### Capturas de pantalla
 
-#### Reproducir video
+#### Reproductor de video
 
 ![Reproducir video](src/assets/screenshots/reproduccion-video.png)
 
-*Figura 1: Reproduccion de video.*
+*Figura 1: Reproductor de video y videos relacionados.*
 
 ![informacion del video](src/assets/screenshots/info-video.png)
 
@@ -34,3 +34,23 @@ Plataforma de videos basada en youtube, frontend desarrollado con [Angular](http
 ![informacion del video](src/assets/screenshots/video-comments.png)
 
 *Figura 3: Seccion de comentarios del video.*
+
+#### Login
+
+![Login](src/assets/screenshots/login-1.png)
+
+*Figura 4: inicio de sesion.*
+
+![Login](src/assets/screenshots/login-2.png)
+
+*Figura 5: inicio de sesion.*
+
+#### Registrarse
+
+![Singup](src/assets/screenshots/singup-1.png)
+
+*Figura 6: Registro de usuario.*
+
+![Singup](src/assets/screenshots/singup-2.png)
+
+*Figura 7: Registro de usuario.*
