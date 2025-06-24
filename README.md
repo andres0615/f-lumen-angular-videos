@@ -25,4 +25,12 @@ Plataforma de videos basada en youtube, frontend desarrollado con [Angular](http
 
 ![Reproducir video](src/assets/screenshots/reproduccion-video.png)
 
-![Reproducir video](src/assets/screenshots/reproduccion-video.png)
+*Figura 1: Reproduccion de video.*
+
+![informacion del video](src/assets/screenshots/info-video.png)
+
+*Figura 2: Seccion con la descripcion y mas informacion del video.*
+
+![informacion del video](src/assets/screenshots/video-comments.png)
+
+*Figura 3: Seccion de comentarios del video.*
