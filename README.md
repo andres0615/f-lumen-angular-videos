@@ -1,6 +1,8 @@
 # Lumen Angular Videos (Frontend)
 
-Plataforma de videos basada en youtube, frontend desarrollado con [Angular](https://angular.io/).
+Plataforma web inspirada en YouTube que permite a los usuarios explorar, subir y gestionar videos de manera eficiente.
+
+Frontend desarrollado con [Angular](https://angular.io/).
 
 - [Convencional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 - [Prettier](https://prettier.io/).
