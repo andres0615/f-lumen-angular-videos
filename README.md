@@ -1,4 +1,4 @@
-# Lumen Angular Videos (Frontend)
+# LA Videos (Frontend)
 
 Plataforma web inspirada en YouTube que permite a los usuarios explorar, subir y gestionar videos de manera eficiente.
 
